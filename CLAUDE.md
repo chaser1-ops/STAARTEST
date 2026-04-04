@@ -8,7 +8,7 @@
 - **Brand credit**: "Brought to you by www.risestudiolabs.com" on every main page footer
 
 ## Path Rules
-- **Allowed**: `/Volumes/AI_SSD/STARTESTING`, `/Volumes/AI_SSD/H1STAARTESTAPP`
+- **Allowed**: `/Volumes/AI_SSD/STARTESTING`, `/Volumes/AI_SSD/RiseIQ`
 - **Forbidden**: Everything else. Do not read, write, scan, or infer from any other directory.
 - If work outside these two paths becomes necessary, STOP and request written approval.
 

@@ -166,7 +166,23 @@
       { id:"3x5", subject:"mixed", skill:"Graph Reading", difficulty:"medium", question:"A pictograph shows 3 sun symbols for Monday and 5 for Tuesday. Each sun stands for 2 hours of sunshine. How many hours on Tuesday?", options:["5","6","10","15"], answer:2, explanation:"5 suns x 2 hours each = 10 hours of sunshine on Tuesday." },
       { id:"3x6", subject:"mixed", skill:"Spelling Patterns", difficulty:"easy", question:"Which word is spelled correctly?", options:["becuz","becaus","because","becuase"], answer:2, explanation:"The correct spelling is 'because.' Sound it out: be-cause." },
       { id:"3x7", subject:"mixed", skill:"Comparing Numbers", difficulty:"medium", question:"Which symbol makes this true? 482 ___ 489", options:[">","<","=","x"], answer:1, explanation:"482 is less than 489, so the correct symbol is <." },
-      { id:"3x8", subject:"mixed", skill:"Story Elements", difficulty:"easy", question:"What is the setting of a story?", options:["The lesson the story teaches","Where and when the story happens","The main character's name","The ending of the story"], answer:1, explanation:"The setting is where and when a story takes place." }
+      { id:"3x8", subject:"mixed", skill:"Story Elements", difficulty:"easy", question:"What is the setting of a story?", options:["The lesson the story teaches","Where and when the story happens","The main character's name","The ending of the story"], answer:1, explanation:"The setting is where and when a story takes place." },
+
+      /* Reading (4 more — 3r13 to 3r16) */
+      { id:"3r13", subject:"reading", skill:"Point of View", difficulty:"medium", question:"A story uses the word 'I' to tell what happens. What point of view is this?", options:["Third person","Second person","First person","Fourth person"], answer:2, explanation:"When the narrator uses 'I,' the story is told from the first-person point of view." },
+      { id:"3r14", subject:"reading", skill:"Genre", difficulty:"easy", question:"A book describes real events about Abraham Lincoln's life. What genre is it?", options:["Fantasy","Fiction","Biography","Mystery"], answer:2, explanation:"A biography tells true facts about a real person's life." },
+      { id:"3r15", subject:"reading", skill:"Prediction", difficulty:"easy", question:"A character grabs an umbrella before leaving. What can you predict?", options:["The character is going swimming","It might rain","The character is going to work","It is very hot outside"], answer:1, explanation:"Grabbing an umbrella is a clue that the character expects rain." },
+      { id:"3r16", subject:"reading", skill:"Retelling", difficulty:"medium", question:"What should a good retelling include?", options:["Only the ending","The author's name and page count","Beginning, middle, and end in order","Only the funniest parts"], answer:2, explanation:"A good retelling covers the key events in the order they happened: beginning, middle, and end." },
+
+      /* Math (4 more — 3m13 to 3m16) */
+      { id:"3m13", subject:"math", skill:"Division intro", difficulty:"easy", question:"12 cookies shared equally among 3 friends. How many does each friend get?", options:["3","4","6","9"], answer:1, explanation:"Division splits a total into equal groups. 12 ÷ 3 = 4 cookies each." },
+      { id:"3m14", subject:"math", skill:"Number Line", difficulty:"easy", question:"Which number is between 345 and 355 on the number line?", options:["340","344","350","360"], answer:2, explanation:"350 is halfway between 345 and 355 and falls between them on the number line." },
+      { id:"3m15", subject:"math", skill:"Word Problem", difficulty:"easy", question:"A farmer has 28 apples and picks 15 more. How many apples does the farmer have in total?", options:["13","33","43","53"], answer:2, explanation:"Add the two amounts: 28 + 15 = 43 apples total." },
+      { id:"3m16", subject:"math", skill:"Geometry", difficulty:"easy", question:"Which shape has exactly 3 sides and 3 corners?", options:["Square","Rectangle","Circle","Triangle"], answer:3, explanation:"A triangle has exactly 3 sides and 3 corners (vertices)." },
+
+      /* Mixed (2 more — 3x9 to 3x10) */
+      { id:"3x9", subject:"mixed", skill:"Real World Math", difficulty:"medium", question:"A pencil costs 25 cents. How much do 4 pencils cost?", options:["$0.75","$0.80","$1.00","$1.25"], answer:2, explanation:"Multiply the cost by the number of pencils: 25 x 4 = 100 cents = $1.00." },
+      { id:"3x10", subject:"mixed", skill:"Reading + Vocab", difficulty:"easy", question:"In the sentence 'The enormous elephant walked slowly,' what does enormous mean?", options:["Very small","Very fast","Very loud","Very big"], answer:3, explanation:"Enormous means very large or huge in size." }
     ],
 
     /* ── GRADE 4 (~28 questions) ── */

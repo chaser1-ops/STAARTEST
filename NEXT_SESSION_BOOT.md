@@ -23,5 +23,5 @@
 8. **Add Grade 8 Science and Social Studies** for future growth
 
 ## Path Rules Reminder
-- **Allowed**: `/Volumes/AI_SSD/STARTESTING`, `/Volumes/AI_SSD/H1STAARTESTAPP`
+- **Allowed**: `/Volumes/AI_SSD/STARTESTING`, `/Volumes/AI_SSD/RiseIQ`
 - **Forbidden**: Everything else — ask before touching
