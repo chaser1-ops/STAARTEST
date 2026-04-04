@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+node_modules/
+.env
+.env.*
+_ref_masterpiece/
+_ref_super/
+*.zip

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 3 HQ — STAAR Power Portal</title>
+  <meta name="description" content="Grade 3 STAAR study lab with reading and math missions, cheat sheets, practice questions, badges, and parent dashboard.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-grade="3">
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="badge-orb"></span>
+        <span>STAAR POWER PORTAL<small>Grade 3 HQ</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#missions">Missions</a>
+        <a href="#study">Study Hub</a>
+        <a href="#practice">Practice</a>
+        <a href="#dashboardSection">Dashboard</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- GRADE HERO -->
+  <section class="hero" style="padding-bottom:32px">
+    <div class="container">
+      <span class="eyebrow">Grade 3 &bull; Reading + Math &bull; Garland ISD STAAR Prep</span>
+      <h1>Grade 3 Mission Control</h1>
+      <p>
+        Reading. Math. Confidence. Practice. Replay. Rewards.
+        This page is built to do the job, not just look cute.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#practice">Start Practice</a>
+        <a class="btn ghost" href="assets/pdfs/garland_staar_grade3_power_pack.pdf">Open PDF Pack</a>
+        <button class="btn teal no-print" onclick="window.print()">Print This Page</button>
+      </div>
+      <p class="small muted" style="margin-top:16px">Brought to you by <strong>www.risestudiolabs.com</strong></p>
+    </div>
+  </section>
+
+  <!-- MISSIONS -->
+  <section id="missions" class="section">
+    <div class="container">
+      <h2>Daily Study Path</h2>
+      <p class="lead">A 3rd grader does better with short wins than giant study marathons. Use these four blocks and rotate.</p>
+      <div id="missionArea" class="grid-4" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <!-- STUDY HUB -->
+  <section id="study" class="section">
+    <div class="container">
+      <div class="study-hub">
+        <div class="kicker">Study Hub</div>
+        <h2>Tap a subject and go.</h2>
+        <p class="lead">The goal is to notice patterns, remember moves, and practice the right kind of thinking.</p>
+
+        <div class="subject-tabs">
+          <button class="subject-tab active" data-tab="reading">Reading</button>
+          <button class="subject-tab" data-tab="math">Math</button>
+          <button class="subject-tab" data-tab="testday">Test Day</button>
+        </div>
+
+        <div class="subject-panel active" data-panel="reading">
+          <div class="cheat-grid">
+            <div class="cheat">
+              <h4>Reading clues that matter</h4>
+              <ul class="pretty">
+                <li><strong>Main idea:</strong> What is the passage mostly about?</li>
+                <li><strong>Details:</strong> Which facts prove that idea?</li>
+                <li><strong>Context clues:</strong> What do the words around a hard word tell you?</li>
+                <li><strong>Author's purpose:</strong> Is the author trying to explain, tell a story, or persuade?</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>When answering questions</h4>
+              <ul class="pretty">
+                <li>Read the question first.</li>
+                <li>Go back and find proof in the passage.</li>
+                <li>Cross out answers that do not match the text.</li>
+                <li>Pick the answer with the best proof.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Memory Trick: P.A.W.</h4>
+              <div class="callout">
+                <strong>P</strong>assage &bull; <strong>A</strong>nswer choices &bull; <strong>W</strong>hy does the text prove it?
+              </div>
+              <p class="small muted" style="margin-top:8px">A fast way to slow down just enough to make a smart choice.</p>
+            </div>
+            <div class="cheat">
+              <h4>Writing inside RLA</h4>
+              <ul class="pretty">
+                <li>Start with a clear answer sentence.</li>
+                <li>Add a detail from the passage.</li>
+                <li>Check capitals and punctuation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="subject-panel" data-panel="math">
+          <div class="cheat-grid">
+            <div class="cheat">
+              <h4>Math moves to remember</h4>
+              <ul class="pretty">
+                <li><strong>Show your work.</strong> Even quick scratch work helps.</li>
+                <li><strong>Underline what matters.</strong> Numbers, units, and the question.</li>
+                <li><strong>Estimate first.</strong> Ask whether your answer seems reasonable.</li>
+                <li><strong>Check the operation.</strong> Add, subtract, multiply, divide, compare?</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Big Grade 3 zones</h4>
+              <ul class="pretty">
+                <li>Place value and number relationships</li>
+                <li>Adding, subtracting, multiplying, dividing</li>
+                <li>Time, measurement, perimeter, and shapes</li>
+                <li>Data and money thinking</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Memory Trick: R.U.N.</h4>
+              <div class="callout">
+                <strong>R</strong>ead the problem &bull; <strong>U</strong>nderline the target &bull; <strong>N</strong>umber sentence
+              </div>
+              <p class="small muted" style="margin-top:8px">Turn the story into math. Then solve it.</p>
+            </div>
+            <div class="cheat">
+              <h4>Fast check questions</h4>
+              <ul class="pretty">
+                <li>Did I answer what the question asked?</li>
+                <li>Did I use the right operation?</li>
+                <li>Is my answer too big or too small?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="subject-panel" data-panel="testday">
+          <div class="cheat-grid">
+            <div class="cheat">
+              <h4>Night before</h4>
+              <ul class="pretty">
+                <li>Pack what you need.</li>
+                <li>Don't over-study late.</li>
+                <li>Get solid sleep.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Morning of the test</h4>
+              <ul class="pretty">
+                <li>Protein + water.</li>
+                <li>Say: "I do one question at a time."</li>
+                <li>Walk in calm, not rushed.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>During the test</h4>
+              <ul class="pretty">
+                <li>If a question feels hard, mark it and move on.</li>
+                <li>Use the process, not panic.</li>
+                <li>Come back with fresh eyes.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Mindset</h4>
+              <div class="callout">"I don't need every question to feel easy. I just need to keep thinking."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section">
+    <div class="container grid-3">
+      <div class="timeline-card">
+        <span class="timeline-chip">Reading Window</span>
+        <h3>April 7–10, 2026</h3>
+        <p class="muted">Garland ISD Grade 3–5 STAAR Reading window.</p>
+      </div>
+      <div class="timeline-card">
+        <span class="timeline-chip">Math Window</span>
+        <h3>April 21–24, 2026</h3>
+        <p class="muted">Garland ISD Grade 3–5 STAAR Math window.</p>
+      </div>
+      <div class="timeline-card">
+        <span class="timeline-chip">Power Tip</span>
+        <h3>Practice Online Too</h3>
+        <p class="muted">TEA says STAAR is administered online. Screen practice matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboardSection" class="section">
+    <div class="container">
+      <h2>Progress + Dashboard</h2>
+      <p class="lead">This tracks locally in the browser on the device being used.</p>
+      <div id="dashboard"></div>
+    </div>
+  </section>
+
+  <!-- BADGES -->
+  <section class="section">
+    <div class="container">
+      <h2>Badge Wall</h2>
+      <p class="lead">Small wins with a purpose. Keep it fun and visible.</p>
+      <div id="badgeGrid" class="badge-grid" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <!-- PRACTICE -->
+  <section id="practice" class="section">
+    <div class="container">
+      <h2>Practice Arena</h2>
+      <p class="lead">Practice Mode is relaxed. Focus Mode adds a soft timer. Challenge Mode adds pressure for stamina.</p>
+      <div id="practiceApp" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <!-- MISSED -->
+  <section class="section">
+    <div class="container" id="missedList"></div>
+  </section>
+
+  <!-- PARENT -->
+  <section class="section">
+    <div class="container" id="parentDashboard"></div>
+  </section>
+
+  <!-- CERTIFICATE -->
+  <section class="section">
+    <div class="container" id="certificateArea"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>STAAR Power Portal</strong> — Grade 3 HQ<br>
+      Brought to you by <a href="https://www.risestudiolabs.com">www.risestudiolabs.com</a><br>
+      <span class="small">&copy; <span data-year></span> RISE Studio Labs</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
