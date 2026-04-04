@@ -578,6 +578,31 @@
     return { current: current, longest: longest };
   }
 
+  function buildStreakCalendar(state) {
+    var days = [];
+    var today = new Date(todayStr() + "T12:00:00");
+    var dayNames = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var i, d, ds, studied;
+    for (i = 6; i >= 0; i--) {
+      d = new Date(today.getTime() - i * 86400000);
+      ds = d.toISOString().slice(0, 10);
+      studied = (state.studyDays || []).indexOf(ds) !== -1;
+      days.push({ name: dayNames[d.getDay()], date: ds, active: studied, isToday: i === 0 });
+    }
+    var html = '<div class="panel" style="margin-top:18px"><h3>Study Streak Calendar</h3>' +
+      '<div style="display:flex;gap:8px;margin-top:12px">';
+    for (i = 0; i < days.length; i++) {
+      var bg = days[i].active ? "linear-gradient(135deg,var(--gold),var(--danger))" : "rgba(255,255,255,.06)";
+      var border = days[i].isToday ? "2px solid var(--cyan)" : "1px solid var(--line)";
+      var icon = days[i].active ? "\ud83d\udd25" : "";
+      html += '<div style="flex:1;text-align:center;padding:10px 4px;border-radius:14px;background:' + bg + ';border:' + border + '">' +
+        '<div class="small" style="font-weight:800;' + (days[i].active ? 'color:#fff' : '') + '">' + days[i].name + '</div>' +
+        '<div style="font-size:1.2rem;margin-top:4px">' + (icon || '<span style="opacity:.2">\u2022</span>') + '</div></div>';
+    }
+    html += '</div><p class="small muted" style="margin-top:8px">Answer 3+ questions to count as a study day</p></div>';
+    return html;
+  }
+
   /* ================================================================
      SECTION 5: BADGE MANAGEMENT
      ================================================================ */
@@ -949,6 +974,7 @@
         '<div class="stat-card"><div class="muted small">Streak</div><div class="kpi">' + (fireDisplay || "0") + (streakInfo.current > 0 ? ' <span style="font-size:0.7em;">' + streakInfo.current + 'd</span>' : '') + '</div></div>' +
         '<div class="stat-card"><div class="muted small">Best Run</div><div class="kpi">' + (state.bestRun || 0) + '</div></div>' +
       '</div>' +
+      buildStreakCalendar(state) +
       '<div class="grid-2" style="margin-top:18px">' +
         '<div class="panel"><h3>Progress Meter</h3><div class="meter"><span style="width:' + Math.min(percent, 100) + '%"></span></div>' +
         '<p class="small muted" style="margin-top:10px">Streak: ' + streakInfo.current + ' days (longest ever: ' + streakInfo.longest + ')</p>' +
