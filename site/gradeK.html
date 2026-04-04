@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindergarten HQ — STAAR Power Portal</title>
+  <meta name="description" content="Kindergarten learning zone with fun letter, number, shape, and pattern activities to build early confidence.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-grade="K">
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="badge-orb"></span>
+        <span>STAAR POWER PORTAL<small>Kindergarten HQ</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#study">Learn</a>
+        <a href="#practice">Practice</a>
+        <a href="#dashboardSection">Progress</a>
+      </nav>
+    </div>
+  </header>
+  <div id="profileBar" class="container" style="margin-top:12px"></div>
+
+  <section class="hero" style="padding-bottom:32px">
+    <div class="container">
+      <span class="eyebrow">Kindergarten &bull; Letters &bull; Numbers &bull; Shapes &bull; Fun</span>
+      <h1>Welcome to Kindergarten HQ!</h1>
+      <p>
+        This is a bright, fun starting zone for the youngest learners. Letters, numbers, shapes, colors, and patterns — all in short, playful activities that build confidence from the very first click.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#practice">Start Practice</a>
+      </div>
+      <p class="small muted" style="margin-top:16px">Brought to you by <strong>www.risestudiolabs.com</strong></p>
+    </div>
+  </section>
+
+  <section id="missions" class="section">
+    <div class="container">
+      <h2>Daily Study Path</h2>
+      <p class="lead">Short and sweet! Kindergarteners do best with tiny wins and lots of encouragement.</p>
+      <div id="missionArea" class="grid-4" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section id="study" class="section">
+    <div class="container">
+      <div class="study-hub">
+        <div class="kicker">Learning Zone</div>
+        <h2>Fun things to know.</h2>
+        <p class="lead">These are the building blocks. Every big reader and math star started right here.</p>
+
+        <div class="subject-tabs">
+          <button class="subject-tab active" data-tab="reading">Letters &amp; Reading</button>
+          <button class="subject-tab" data-tab="math">Numbers &amp; Math</button>
+        </div>
+
+        <div class="subject-panel active" data-panel="reading">
+          <div class="cheat-grid">
+            <div class="cheat">
+              <h4>Letter Sounds</h4>
+              <ul class="pretty">
+                <li><strong>Every letter makes a sound.</strong> A says /a/ like apple.</li>
+                <li><strong>Say it out loud.</strong> Hearing the sound helps you remember it.</li>
+                <li><strong>Look for letters everywhere</strong> — on signs, books, and cereal boxes!</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Rhyming Words</h4>
+              <ul class="pretty">
+                <li><strong>Rhyming</strong> means words that sound the same at the end.</li>
+                <li>Cat, hat, bat — they all rhyme!</li>
+                <li>Clap when you hear a rhyme. It makes your brain notice patterns.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Stories</h4>
+              <ul class="pretty">
+                <li><strong>Characters</strong> are the people or animals in a story.</li>
+                <li>Stories have a <strong>beginning, middle, and end</strong>.</li>
+                <li>After reading, ask: "What happened first? What happened next?"</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Books and Print</h4>
+              <ul class="pretty">
+                <li>We read from <strong>left to right</strong> and <strong>top to bottom</strong>.</li>
+                <li>The <strong>front cover</strong> tells you the title.</li>
+                <li>Words are made of <strong>letters</strong> with spaces between them.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="subject-panel" data-panel="math">
+          <div class="cheat-grid">
+            <div class="cheat">
+              <h4>Counting</h4>
+              <ul class="pretty">
+                <li>Count to 20 and back! Practice every day.</li>
+                <li>Touch each object as you count — <strong>one touch, one number</strong>.</li>
+                <li>Count things at home: toys, steps, crackers!</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Shapes</h4>
+              <ul class="pretty">
+                <li><strong>Circle:</strong> Round like a ball.</li>
+                <li><strong>Square:</strong> 4 equal sides.</li>
+                <li><strong>Triangle:</strong> 3 sides.</li>
+                <li><strong>Rectangle:</strong> Like a door — 2 long sides, 2 short sides.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Comparing</h4>
+              <ul class="pretty">
+                <li><strong>More, fewer, same</strong> — compare groups of things.</li>
+                <li><strong>Bigger and smaller</strong> — which one takes up more space?</li>
+                <li><strong>Taller and shorter</strong> — stand two things next to each other!</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Adding</h4>
+              <ul class="pretty">
+                <li><strong>Adding means putting together.</strong></li>
+                <li>Use your fingers! 3 fingers + 2 fingers = 5 fingers.</li>
+                <li>Draw dots to help you count.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboardSection" class="section">
+    <div class="container">
+      <h2>My Progress</h2>
+      <p class="lead">Every question you try is a win!</p>
+      <div id="dashboard"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Badge Wall</h2>
+      <p class="lead">Collect badges by practicing. You're doing awesome!</p>
+      <div id="badgeGrid" class="badge-grid" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section id="practice" class="section">
+    <div class="container">
+      <h2>Practice Zone</h2>
+      <p class="lead">Try some questions! There's no wrong way to learn.</p>
+      <div id="practiceApp" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container" id="missedList"></div></section>
+  <section class="section"><div class="container" id="parentDashboard"></div></section>
+  <section class="section"><div class="container" id="certificateArea"></div></section>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>STAAR Power Portal</strong> — Kindergarten HQ<br>
+      Brought to you by <a href="https://www.risestudiolabs.com">www.risestudiolabs.com</a><br>
+      <span class="small">&copy; <span data-year></span> RISE Studio Labs</span>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

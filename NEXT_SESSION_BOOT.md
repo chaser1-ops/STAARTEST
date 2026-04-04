@@ -13,14 +13,14 @@
 - **Netlify config**: `netlify.toml`
 
 ## Recommended Next Steps
-1. **Create PDF power packs** for Grades 4, 5, 6 (Grade 3 has one)
-2. **Add study streak calendar** visualization to dashboards
-3. **Link Netlify to GitHub** — connect site for continuous deployment
-4. **Implement school config layer** when a second school requests the product
-5. **Start iOS app development** — see `/Volumes/AI_SSD/H1STAARTESTAPP/APP_ROADMAP.md`
-6. **Add more question variety** — expand to 40+ per grade
-7. **Consider Grade 8 Science** expansion
-8. **Explore Rise Intellect / RiseIQ** platform migration when ready
+1. **Link Netlify to GitHub** — connect site for continuous deployment
+2. **Start iOS app development** — create Xcode project using documented v1 architecture
+3. **Add study streak calendar** visualization to dashboards
+4. **Expand K-2 content** — grow question banks toward 20+ per grade
+5. **Create K-2 PDF power packs** (Grades 3-6 already have them)
+6. **Implement school config layer** when a second school requests the product
+7. **Explore Rise Intellect / RiseIQ** platform migration when ready
+8. **Add Grade 8 Science and Social Studies** for future growth
 
 ## Path Rules Reminder
 - **Allowed**: `/Volumes/AI_SSD/STARTESTING`, `/Volumes/AI_SSD/H1STAARTESTAPP`

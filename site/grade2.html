@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 2 HQ — STAAR Power Portal</title>
+  <meta name="description" content="Grade 2 learning zone with reading comprehension, math operations, and study activities.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-grade="2">
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="badge-orb"></span>
+        <span>STAAR POWER PORTAL<small>Grade 2 HQ</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#study">Learn</a>
+        <a href="#practice">Practice</a>
+        <a href="#dashboardSection">Progress</a>
+      </nav>
+    </div>
+  </header>
+  <div id="profileBar" class="container" style="margin-top:12px"></div>
+
+  <section class="hero" style="padding-bottom:32px">
+    <div class="container">
+      <span class="eyebrow">Grade 2 &bull; Reading &bull; Math &bull; Growing Skills</span>
+      <h1>Grade 2 Mission Control</h1>
+      <p>
+        Second grade builds the bridge to bigger reading and stronger math. This HQ helps students practice the skills they need with confidence and fun.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#practice">Start Practice</a>
+      </div>
+      <p class="small muted" style="margin-top:16px">Brought to you by <strong>www.risestudiolabs.com</strong></p>
+    </div>
+  </section>
+
+  <section id="missions" class="section">
+    <div class="container">
+      <h2>Daily Study Path</h2>
+      <p class="lead">Second graders do great with 10-15 minute focused practice sessions.</p>
+      <div id="missionArea" class="grid-4" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section id="study" class="section">
+    <div class="container">
+      <div class="study-hub">
+        <div class="kicker">Learning Zone</div>
+        <h2>Grade 2 skills and strategies.</h2>
+
+        <div class="subject-tabs">
+          <button class="subject-tab active" data-tab="reading">Reading</button>
+          <button class="subject-tab" data-tab="math">Math</button>
+        </div>
+
+        <div class="subject-panel active" data-panel="reading">
+          <div class="cheat-grid">
+            <div class="cheat">
+              <h4>Understanding Stories</h4>
+              <ul class="pretty">
+                <li><strong>Main idea:</strong> What is the story mostly about?</li>
+                <li><strong>Retelling:</strong> Tell the beginning, middle, and end.</li>
+                <li><strong>Characters:</strong> What do they say and do? That shows who they are.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Vocabulary</h4>
+              <ul class="pretty">
+                <li>When you see a new word, <strong>look at the words around it</strong> for clues.</li>
+                <li>Pictures can help you figure out what a word means.</li>
+                <li>Try using the new word in your own sentence!</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Text Features</h4>
+              <ul class="pretty">
+                <li><strong>Headings</strong> tell you what a section is about.</li>
+                <li><strong>Bold words</strong> are important — pay attention to them.</li>
+                <li><strong>Pictures and captions</strong> give you extra information.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Making Predictions</h4>
+              <ul class="pretty">
+                <li>Use clues from the story to guess what happens next.</li>
+                <li>Ask: "Based on what I read, what makes sense?"</li>
+                <li>Check your prediction as you keep reading!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="subject-panel" data-panel="math">
+          <div class="cheat-grid">
+            <div class="cheat">
+              <h4>Addition &amp; Subtraction</h4>
+              <ul class="pretty">
+                <li>Add and subtract within 100.</li>
+                <li><strong>Regroup</strong> when ones go over 9 (carry to tens).</li>
+                <li>Use mental math: break numbers into tens and ones.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Skip Counting</h4>
+              <ul class="pretty">
+                <li>Count by <strong>2s:</strong> 2, 4, 6, 8, 10...</li>
+                <li>Count by <strong>5s:</strong> 5, 10, 15, 20, 25...</li>
+                <li>Count by <strong>10s:</strong> 10, 20, 30, 40, 50...</li>
+                <li>Skip counting helps with multiplication later!</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Measuring</h4>
+              <ul class="pretty">
+                <li>Use a ruler to measure length in <strong>inches</strong> or <strong>centimeters</strong>.</li>
+                <li>Start at zero, not the edge of the ruler!</li>
+                <li>Estimate first, then measure to check.</li>
+              </ul>
+            </div>
+            <div class="cheat">
+              <h4>Fractions</h4>
+              <ul class="pretty">
+                <li>A <strong>half</strong> means 2 equal parts.</li>
+                <li>A <strong>fourth</strong> means 4 equal parts.</li>
+                <li>The parts must be <strong>equal</strong> — same size!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboardSection" class="section">
+    <div class="container">
+      <h2>My Progress</h2>
+      <p class="lead">Track your wins right here.</p>
+      <div id="dashboard"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Badge Wall</h2>
+      <p class="lead">Earn badges by practicing and building streaks.</p>
+      <div id="badgeGrid" class="badge-grid" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section id="practice" class="section">
+    <div class="container">
+      <h2>Practice Zone</h2>
+      <p class="lead">Pick a subject and start practicing!</p>
+      <div id="practiceApp" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container" id="missedList"></div></section>
+  <section class="section"><div class="container" id="parentDashboard"></div></section>
+  <section class="section"><div class="container" id="certificateArea"></div></section>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>STAAR Power Portal</strong> — Grade 2 HQ<br>
+      Brought to you by <a href="https://www.risestudiolabs.com">www.risestudiolabs.com</a><br>
+      <span class="small">&copy; <span data-year></span> RISE Studio Labs</span>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

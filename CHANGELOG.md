@@ -1,5 +1,34 @@
 # Changelog — STAARTEST
 
+## v4.0.0 — 2026-04-04 (Phase 3: K-6 Platform Foundation)
+### Added
+- K-6 platform architecture: Kindergarten, Grade 1, and Grade 2 Starter HQ pages
+- Grade tiering system: "Starter HQ" (K-2) and "Full HQ" (3-6) with visual badges
+- PDF power packs for Grades 4, 5, and 6 (reading/math/science cheat sheets, memory tricks, test day tips, certificates)
+- K-2 question banks: Kindergarten (12), Grade 1 (12), Grade 2 (14) — age-appropriate content
+- K-2 badge definitions (6 per grade)
+- K-2 study hub cheat sheets (letters, numbers, shapes, counting, stories, vocabulary)
+- Grade 5 Science cheat sheet panel in study hub
+
+### Expanded
+- Grade 4 questions: 28 → 40 (added viewpoint, poetry rhythm, multiple meaning, angles, line plots, rounding)
+- Grade 5 questions: 38 → 48 (added dividing decimals, prime/composite, inherited traits, simple machines)
+- Grade 6 questions: 28 → 40 (added unreliable narrator, theme across genres, GCF/LCM, box plots)
+- Total questions across platform: 126 → 188
+
+### Changed
+- Homepage reframed from "Grades 3-6 Study HQ" to "K-6 Learning Platform"
+- Grade selection now shows tiered sections with Starter Zones and Full Study Labs
+- Navigation updated on sources, parent dashboard, and power pack pages for K-6
+- Parent dashboard grade cards expanded to 7 (K through 6)
+- Power pack page now links all 4 PDF packs (Grades 3-6)
+- Profile setup now includes K, 1, 2 in grade selection
+
+### Documented
+- K-6 platform direction (docs/decisions/K6_PLATFORM_DIRECTION.md)
+- Grade tiering strategy (docs/decisions/GRADE_TIERING_STRATEGY.md)
+- Sponsor/support seam refinement (docs/decisions/SPONSOR_SUPPORT_SEAM_REFINEMENT.md)
+
 ## v3.0.0 — 2026-04-04 (Phase 2: Legendary Product Expansion)
 ### Added
 - Kid profile system: nickname, avatar selection (16 options), grade, localStorage persistence

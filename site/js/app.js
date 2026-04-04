@@ -17,6 +17,71 @@
      SECTION 1: QUESTION BANKS BY GRADE
      ================================================================ */
   var questionBanks = {
+    /* ── KINDERGARTEN (~12 questions) ── */
+    "K": [
+      /* Reading (4) */
+      { id:"Kr1", subject:"reading", skill:"Letter Sounds", difficulty:"easy", question:"Which letter makes the /s/ sound?", options:["S","M","T","B"], answer:0, explanation:"The letter S makes the /s/ sound, like in 'sun' and 'sit.'" },
+      { id:"Kr2", subject:"reading", skill:"Rhyming", difficulty:"easy", question:"Which word rhymes with 'cat'?", options:["Car","Hat","Cup","Dog"], answer:1, explanation:"'Hat' and 'cat' both end with the '-at' sound, so they rhyme!" },
+      { id:"Kr3", subject:"reading", skill:"Story Retelling", difficulty:"easy", question:"A bear woke up, ate honey, and went to sleep. What happened FIRST?", options:["The bear ate honey","The bear went to sleep","The bear woke up","The bear ran away"], answer:2, explanation:"First means what happened at the very beginning. The bear woke up first." },
+      { id:"Kr4", subject:"reading", skill:"Print Concepts", difficulty:"easy", question:"When we read a book in English, which way do we go?", options:["Right to left","Bottom to top","Left to right","Any direction"], answer:2, explanation:"In English we read from left to right across the page." },
+
+      /* Math (4) */
+      { id:"Km1", subject:"math", skill:"Counting", difficulty:"easy", question:"What number comes after 14?", options:["13","15","16","12"], answer:1, explanation:"When we count, the number after 14 is 15." },
+      { id:"Km2", subject:"math", skill:"Shapes", difficulty:"easy", question:"Which shape has 3 sides?", options:["Circle","Square","Triangle","Rectangle"], answer:2, explanation:"A triangle has 3 sides. 'Tri' means three!" },
+      { id:"Km3", subject:"math", skill:"Comparing Sizes", difficulty:"easy", question:"Which animal is BIGGER, an elephant or a cat?", options:["A cat","An elephant","They are the same","A mouse"], answer:1, explanation:"An elephant is much bigger than a cat." },
+      { id:"Km4", subject:"math", skill:"Addition", difficulty:"easy", question:"What is 3 + 2?", options:["4","5","6","7"], answer:1, explanation:"If you have 3 apples and get 2 more, you have 5 apples total." },
+
+      /* Mixed (4) */
+      { id:"Kx1", subject:"mixed", skill:"Colors", difficulty:"easy", question:"If you mix red and yellow paint, what color do you get?", options:["Green","Purple","Orange","Blue"], answer:2, explanation:"Red and yellow mixed together make orange!" },
+      { id:"Kx2", subject:"mixed", skill:"Patterns", difficulty:"easy", question:"What comes next? Red, Blue, Red, Blue, ___", options:["Green","Blue","Red","Yellow"], answer:2, explanation:"The pattern goes Red, Blue, Red, Blue. Next is Red again!" },
+      { id:"Kx3", subject:"mixed", skill:"Following Directions", difficulty:"easy", question:"If someone says 'clap two times,' how many times should you clap?", options:["1","2","3","4"], answer:1, explanation:"The direction says two times, so you clap 2 times." },
+      { id:"Kx4", subject:"mixed", skill:"Sorting", difficulty:"easy", question:"Which one does NOT belong in a group of fruits?", options:["Apple","Banana","Carrot","Grape"], answer:2, explanation:"A carrot is a vegetable, not a fruit. It does not belong with the fruits." }
+    ],
+
+    /* ── GRADE 1 (~12 questions) ── */
+    "1": [
+      /* Reading (4) */
+      { id:"1r1", subject:"reading", skill:"Beginning Sounds", difficulty:"easy", question:"Which word starts with the same sound as 'ball'?", options:["Dog","Bat","Cat","Sun"], answer:1, explanation:"'Bat' and 'ball' both start with the /b/ sound." },
+      { id:"1r2", subject:"reading", skill:"Sight Words", difficulty:"easy", question:"Which word is spelled correctly?", options:["thay","thae","they","tey"], answer:2, explanation:"'They' is the correct spelling. It is a sight word to memorize." },
+      { id:"1r3", subject:"reading", skill:"Story Elements", difficulty:"easy", question:"In the story, a boy goes to the park with his dog. WHO is the story about?", options:["The park","A boy and his dog","A car","The trees"], answer:1, explanation:"The characters are who the story is about: a boy and his dog." },
+      { id:"1r4", subject:"reading", skill:"Asking Questions", difficulty:"easy", question:"Which is a question?", options:["The cat is big.","I like cats.","Do you see the cat?","Cats run fast."], answer:2, explanation:"A question asks something and ends with a question mark (?). 'Do you see the cat?' is a question." },
+
+      /* Math (4) */
+      { id:"1m1", subject:"math", skill:"Addition within 20", difficulty:"easy", question:"What is 8 + 5?", options:["12","13","14","15"], answer:1, explanation:"8 + 5 = 13. You can count up 5 from 8: 9, 10, 11, 12, 13." },
+      { id:"1m2", subject:"math", skill:"Subtraction within 20", difficulty:"easy", question:"What is 15 - 7?", options:["6","7","8","9"], answer:2, explanation:"15 - 7 = 8. You can count back 7 from 15 to get 8." },
+      { id:"1m3", subject:"math", skill:"Place Value", difficulty:"medium", question:"In the number 16, how many tens are there?", options:["0","1","6","16"], answer:1, explanation:"16 has 1 ten and 6 ones. The 1 is in the tens place." },
+      { id:"1m4", subject:"math", skill:"Telling Time", difficulty:"easy", question:"When the short hand points to 3 and the long hand points to 12, what time is it?", options:["12 o'clock","3 o'clock","6 o'clock","9 o'clock"], answer:1, explanation:"The short hand shows the hour. When it points to 3 and the long hand is on 12, it is 3 o'clock." },
+
+      /* Mixed (4) */
+      { id:"1x1", subject:"mixed", skill:"Seasons", difficulty:"easy", question:"In which season do leaves change color and fall from trees?", options:["Summer","Winter","Fall","Spring"], answer:2, explanation:"In fall (autumn), leaves change color and fall off the trees." },
+      { id:"1x2", subject:"mixed", skill:"Community Helpers", difficulty:"easy", question:"Who helps put out fires?", options:["A teacher","A doctor","A firefighter","A mail carrier"], answer:2, explanation:"A firefighter is a community helper who puts out fires and keeps people safe." },
+      { id:"1x3", subject:"mixed", skill:"Comparing Objects", difficulty:"easy", question:"Which holds MORE water, a cup or a bathtub?", options:["A cup","A bathtub","They hold the same","A spoon"], answer:1, explanation:"A bathtub is much bigger and holds more water than a cup." },
+      { id:"1x4", subject:"mixed", skill:"Sequencing Events", difficulty:"easy", question:"What do you do FIRST in the morning: eat breakfast or brush your teeth after eating?", options:["Brush teeth","Eat breakfast","Go to sleep","Watch TV"], answer:1, explanation:"You eat breakfast first, then brush your teeth after eating." }
+    ],
+
+    /* ── GRADE 2 (~14 questions) ── */
+    "2": [
+      /* Reading (5) */
+      { id:"2r1", subject:"reading", skill:"Main Idea", difficulty:"easy", question:"A paragraph tells about how dogs are great pets because they are friendly and loyal. What is the main idea?", options:["Dogs can bark loudly","Dogs are great pets","Dogs have four legs","Dogs eat food"], answer:1, explanation:"The main idea is the big point: dogs are great pets." },
+      { id:"2r2", subject:"reading", skill:"Retelling", difficulty:"easy", question:"A girl planted a seed, watered it every day, and watched it grow into a flower. What happened at the END?", options:["She planted a seed","She watered it","It grew into a flower","She found a pot"], answer:2, explanation:"At the end of the story, the seed grew into a flower." },
+      { id:"2r3", subject:"reading", skill:"Vocabulary in Context", difficulty:"medium", question:"'The tiny kitten fit in my hand.' What does 'tiny' mean?", options:["Very big","Very small","Very fast","Very loud"], answer:1, explanation:"'Tiny' means very small. The kitten was small enough to fit in a hand." },
+      { id:"2r4", subject:"reading", skill:"Text Features", difficulty:"easy", question:"What does a bold word in a book usually mean?", options:["Skip it","It is an important word","It is wrong","It is funny"], answer:1, explanation:"Bold words are important words the author wants you to notice." },
+      { id:"2r5", subject:"reading", skill:"Making Predictions", difficulty:"medium", question:"Dark clouds fill the sky and the wind is blowing hard. What will probably happen next?", options:["It will snow in summer","It will rain","The sun will come out","A rainbow will appear"], answer:1, explanation:"Dark clouds and strong wind are clues that rain is coming." },
+
+      /* Math (5) */
+      { id:"2m1", subject:"math", skill:"Addition within 100", difficulty:"easy", question:"What is 34 + 25?", options:["57","58","59","60"], answer:2, explanation:"34 + 25: add the ones (4 + 5 = 9) and the tens (30 + 20 = 50). Total is 59." },
+      { id:"2m2", subject:"math", skill:"Subtraction within 100", difficulty:"medium", question:"What is 73 - 28?", options:["43","44","45","55"], answer:2, explanation:"73 - 28 = 45. Regroup: 13 - 8 = 5, and 60 - 20 = 40. Total is 45." },
+      { id:"2m3", subject:"math", skill:"Skip Counting", difficulty:"easy", question:"Count by 5s: 5, 10, 15, 20, ___. What comes next?", options:["21","22","25","30"], answer:2, explanation:"When you skip count by 5s, the next number after 20 is 25." },
+      { id:"2m4", subject:"math", skill:"Measuring Length", difficulty:"easy", question:"Which tool do we use to measure how long something is?", options:["A scale","A ruler","A thermometer","A clock"], answer:1, explanation:"A ruler is used to measure length. It shows inches or centimeters." },
+      { id:"2m5", subject:"math", skill:"Fractions", difficulty:"medium", question:"A pizza is cut into 4 equal pieces. You eat 1 piece. What fraction did you eat?", options:["1/2","1/3","1/4","2/4"], answer:2, explanation:"You ate 1 piece out of 4 equal pieces. That is 1/4 of the pizza." },
+
+      /* Mixed (4) */
+      { id:"2x1", subject:"mixed", skill:"Map Skills", difficulty:"easy", question:"On a map, what does a blue area usually show?", options:["Mountains","Water","Roads","Parks"], answer:1, explanation:"Blue on a map usually shows water like rivers, lakes, or oceans." },
+      { id:"2x2", subject:"mixed", skill:"Money", difficulty:"medium", question:"A toy costs 50 cents. You have 2 quarters. Do you have enough?", options:["No, you need more","Yes, exactly enough","You have too much","You cannot tell"], answer:1, explanation:"Each quarter is worth 25 cents. Two quarters equal 50 cents, exactly enough!" },
+      { id:"2x3", subject:"mixed", skill:"Cause and Effect", difficulty:"easy", question:"The ice cream melted because it was left in the sun. Why did the ice cream melt?", options:["It was in the freezer","It was left in the sun","Someone ate it","It was too cold"], answer:1, explanation:"The cause is being left in the sun. The heat made the ice cream melt." },
+      { id:"2x4", subject:"mixed", skill:"Informational Text", difficulty:"medium", question:"A book about whales tells you their size, what they eat, and where they live. What kind of book is this?", options:["A fairy tale","A poem","An informational book","A comic book"], answer:2, explanation:"A book that gives real facts about a topic is called an informational book." }
+    ],
+
     /* ── GRADE 3 (~32 questions) ── */
     "3": [
       /* Reading (12) */
@@ -92,7 +157,25 @@
       { id:"4x5", subject:"mixed", skill:"Map Skills", difficulty:"medium", question:"On a map, the compass rose shows N at the top. If you move toward the bottom of the map, which direction do you go?", options:["North","South","East","West"], answer:1, explanation:"The bottom of a standard map is south, opposite of north at the top." },
       { id:"4x6", subject:"mixed", skill:"Synonyms", difficulty:"easy", question:"Which word means the same as 'enormous'?", options:["Tiny","Quick","Huge","Quiet"], answer:2, explanation:"Enormous and huge both mean very large." },
       { id:"4x7", subject:"mixed", skill:"Elapsed Time", difficulty:"hard", question:"Practice starts at 4:30 PM and lasts 1 hour 15 minutes. What time does it end?", options:["5:15 PM","5:30 PM","5:45 PM","6:00 PM"], answer:2, explanation:"4:30 + 1 hour = 5:30, then +15 minutes = 5:45 PM." },
-      { id:"4x8", subject:"mixed", skill:"Cause and Effect", difficulty:"medium", question:"The plants in the garden died because there was no rain for weeks. What is the cause?", options:["The plants died","The garden was big","No rain for weeks","Someone picked the flowers"], answer:2, explanation:"The cause is what made something happen. No rain caused the plants to die." }
+      { id:"4x8", subject:"mixed", skill:"Cause and Effect", difficulty:"medium", question:"The plants in the garden died because there was no rain for weeks. What is the cause?", options:["The plants died","The garden was big","No rain for weeks","Someone picked the flowers"], answer:2, explanation:"The cause is what made something happen. No rain caused the plants to die." },
+
+      /* Additional Reading (4) */
+      { id:"4r11", subject:"reading", skill:"Author's Viewpoint", difficulty:"medium", question:"An author writes about why school lunches should include more vegetables. What is the author's viewpoint?", options:["School lunches are perfect","Students should eat more vegetables at school","Vegetables taste bad","Lunch should be shorter"], answer:1, explanation:"The author's viewpoint is their position or belief about the topic." },
+      { id:"4r12", subject:"reading", skill:"Poetry Rhythm", difficulty:"medium", question:"A poem has a steady beat, like a drum: 'The CAT sat ON the MAT.' What creates this beat?", options:["Rhyming words only","The stressed and unstressed syllables","The length of the poem","The title of the poem"], answer:1, explanation:"Rhythm in poetry comes from a pattern of stressed (loud) and unstressed (soft) syllables." },
+      { id:"4r13", subject:"reading", skill:"Multiple Meaning Words", difficulty:"medium", question:"'Please watch your step.' and 'I got a new watch.' The word 'watch' means:", options:["The same thing in both sentences","To look carefully / a device that tells time","Only a device","Only to look"], answer:1, explanation:"'Watch' has multiple meanings. In the first sentence it means to look carefully; in the second it means a time-telling device." },
+      { id:"4r14", subject:"reading", skill:"Text Evidence", difficulty:"hard", question:"A teacher asks you to prove your answer using the passage. What should you do?", options:["Guess the answer","Find a sentence in the passage that supports your answer","Ask a friend","Copy the whole passage"], answer:1, explanation:"Text evidence means pointing to specific words or sentences in the passage that support your answer." },
+
+      /* Additional Math (4) */
+      { id:"4m11", subject:"math", skill:"Rounding", difficulty:"medium", question:"What is 4,367 rounded to the nearest thousand?", options:["4,000","4,400","5,000","4,300"], answer:0, explanation:"Look at the hundreds digit (3). Since 3 is less than 5, round down to 4,000." },
+      { id:"4m12", subject:"math", skill:"Line Plots", difficulty:"medium", question:"A line plot shows the lengths of 10 pencils. Five X marks are above 6 inches. What does that tell you?", options:["All pencils are 6 inches","Half the pencils are 6 inches long","Only one pencil is 6 inches","No pencils are 6 inches"], answer:1, explanation:"Five out of ten pencils are 6 inches. That is half of the pencils." },
+      { id:"4m13", subject:"math", skill:"Angles", difficulty:"medium", question:"An angle that is exactly 90 degrees is called a:", options:["Acute angle","Obtuse angle","Right angle","Straight angle"], answer:2, explanation:"A right angle measures exactly 90 degrees and looks like the corner of a square." },
+      { id:"4m14", subject:"math", skill:"Equivalent Fractions", difficulty:"hard", question:"Which fraction is equivalent to 3/6?", options:["1/3","1/2","2/3","3/4"], answer:1, explanation:"3/6 simplifies to 1/2 because 3 divided by 3 = 1 and 6 divided by 3 = 2." },
+
+      /* Additional Mixed (4) */
+      { id:"4x9", subject:"mixed", skill:"Map Skills", difficulty:"medium", question:"A map legend shows a small tree symbol. What does the tree symbol most likely represent?", options:["A hospital","A school","A forest or park","A road"], answer:2, explanation:"Map legends explain symbols. A tree symbol usually shows a forest or park area." },
+      { id:"4x10", subject:"mixed", skill:"Dictionary Skills", difficulty:"easy", question:"Guide words at the top of a dictionary page are 'bat' and 'bed.' Which word would be on that page?", options:["Apple","Bear","Book","Cake"], answer:1, explanation:"'Bear' comes after 'bat' and before 'bed' in alphabetical order, so it would be on that page." },
+      { id:"4x11", subject:"mixed", skill:"Estimation", difficulty:"medium", question:"There are 48 students and 51 chairs in the cafeteria. About how many chairs are empty?", options:["About 3","About 10","About 50","About 100"], answer:0, explanation:"50 - 50 is about 0, but 51 - 48 = 3. About 3 chairs are empty." },
+      { id:"4x12", subject:"mixed", skill:"Graphing", difficulty:"medium", question:"A bar graph shows ice cream flavors. Chocolate has the tallest bar. What does that mean?", options:["Chocolate is the cheapest","Chocolate is the most popular flavor shown","Chocolate has the fewest votes","The graph is wrong"], answer:1, explanation:"In a bar graph, the tallest bar shows the greatest amount. Chocolate got the most votes." }
     ],
 
     /* ── GRADE 5 (~36 questions) ── */
@@ -141,7 +224,25 @@
       { id:"5s5", subject:"science", skill:"Earth and Space", difficulty:"medium", question:"What causes day and night on Earth?", options:["The moon blocking the sun","Earth's rotation on its axis","Earth's revolution around the sun","The sun moving across the sky"], answer:1, explanation:"Earth rotates (spins) on its axis once every 24 hours, creating day and night." },
       { id:"5s6", subject:"science", skill:"Light and Sound", difficulty:"easy", question:"Light travels in what kind of path?", options:["Curved lines","Zigzag lines","Straight lines","Circles"], answer:2, explanation:"Light travels in straight lines. That is why shadows have sharp edges." },
       { id:"5s7", subject:"science", skill:"Engineering Design", difficulty:"hard", question:"An engineer tests a bridge model and it breaks. What should the engineer do next?", options:["Give up on the project","Redesign and test again","Use the same design anyway","Blame the materials"], answer:1, explanation:"The engineering design process includes testing, learning from failure, and redesigning." },
-      { id:"5s8", subject:"science", skill:"Energy", difficulty:"medium", question:"A solar panel converts sunlight into what type of energy?", options:["Sound energy","Electrical energy","Heat energy only","Mechanical energy"], answer:1, explanation:"Solar panels convert light energy from the sun into electrical energy." }
+      { id:"5s8", subject:"science", skill:"Energy", difficulty:"medium", question:"A solar panel converts sunlight into what type of energy?", options:["Sound energy","Electrical energy","Heat energy only","Mechanical energy"], answer:1, explanation:"Solar panels convert light energy from the sun into electrical energy." },
+
+      /* Additional Reading (3) */
+      { id:"5r13", subject:"reading", skill:"Compare/Contrast Texts", difficulty:"hard", question:"Article A says exercise improves focus. Article B says sleep improves focus. How can you use BOTH articles?", options:["Ignore one of them","Combine the ideas: both exercise and sleep help focus","Pick the shorter article","Only trust the first article"], answer:1, explanation:"Good readers combine information from multiple sources to form a complete understanding." },
+      { id:"5r14", subject:"reading", skill:"Dramatic Irony", difficulty:"hard", question:"The reader knows a surprise party is planned, but the character in the story does not. What is this called?", options:["Foreshadowing","Flashback","Dramatic irony","Metaphor"], answer:2, explanation:"Dramatic irony is when the reader knows something the character does not." },
+      { id:"5r15", subject:"reading", skill:"Summarizing Nonfiction", difficulty:"medium", question:"A good summary of a nonfiction article should include:", options:["Every single detail","Only the title","The main idea and key supporting details","Your personal opinion"], answer:2, explanation:"A nonfiction summary captures the main idea and the most important supporting details." },
+
+      /* Additional Math (3) */
+      { id:"5m13", subject:"math", skill:"Dividing Decimals", difficulty:"hard", question:"What is 4.5 divided by 0.5?", options:["2.25","4","9","0.9"], answer:2, explanation:"4.5 / 0.5 = 9. Think of it as: how many halves fit in 4.5? Nine halves." },
+      { id:"5m14", subject:"math", skill:"Prime and Composite", difficulty:"medium", question:"Which number is a prime number?", options:["4","9","11","15"], answer:2, explanation:"A prime number has exactly two factors: 1 and itself. 11 can only be divided evenly by 1 and 11." },
+      { id:"5m15", subject:"math", skill:"Line Graphs", difficulty:"medium", question:"A line graph shows temperature rising from Monday to Friday. What does the upward line tell you?", options:["It got colder each day","The temperature stayed the same","The temperature increased over the week","Friday was the coldest day"], answer:2, explanation:"An upward line on a graph shows an increase. The temperature went up from Monday to Friday." },
+
+      /* Additional Science (2) */
+      { id:"5s9", subject:"science", skill:"Inherited vs Learned", difficulty:"medium", question:"A dog has brown fur like its parents. Is brown fur inherited or learned?", options:["Learned","Inherited","Both","Neither"], answer:1, explanation:"Fur color is passed from parents to offspring through genes. It is an inherited trait." },
+      { id:"5s10", subject:"science", skill:"Simple Machines", difficulty:"medium", question:"A ramp used to load boxes into a truck is an example of which simple machine?", options:["Lever","Pulley","Inclined plane","Wheel and axle"], answer:2, explanation:"A ramp is an inclined plane. It makes it easier to move heavy objects to a higher level." },
+
+      /* Additional Mixed (2) */
+      { id:"5x7", subject:"mixed", skill:"Budgeting", difficulty:"hard", question:"You have $20. You buy a book for $8.50 and a snack for $3.25. How much money do you have left?", options:["$7.25","$8.25","$9.25","$11.75"], answer:1, explanation:"$8.50 + $3.25 = $11.75 spent. $20.00 - $11.75 = $8.25 remaining." },
+      { id:"5x8", subject:"mixed", skill:"Greek/Latin Roots", difficulty:"medium", question:"The root 'aqua' means water. Which word is most likely related to water?", options:["Aquarium","Airplane","Automobile","Auditorium"], answer:0, explanation:"An aquarium holds water for fish. The root 'aqua' means water." }
     ],
 
     /* ── GRADE 6 (~28 questions) ── */
@@ -178,7 +279,25 @@
       { id:"6x5", subject:"mixed", skill:"Coordinate Geometry", difficulty:"medium", question:"What is the distance between (0, 0) and (3, 4) on a coordinate plane?", options:["3","4","5","7"], answer:2, explanation:"Use the distance formula or recognize the 3-4-5 right triangle. Distance = 5." },
       { id:"6x6", subject:"mixed", skill:"Vocabulary in Context", difficulty:"medium", question:"'The president will address the nation tonight.' What does 'address' mean here?", options:["A home location","To speak to","To mail a letter","A number on a building"], answer:1, explanation:"In this context, 'address' means to speak to or give a speech to the nation." },
       { id:"6x7", subject:"mixed", skill:"Order of Operations", difficulty:"medium", question:"What is (8 + 2) x 3 - 4?", options:["22","26","30","34"], answer:1, explanation:"Parentheses first: 8 + 2 = 10. Then 10 x 3 = 30. Then 30 - 4 = 26." },
-      { id:"6x8", subject:"mixed", skill:"Rate and Ratio Word Problem", difficulty:"hard", question:"If you read 45 pages in 3 days, at the same rate, how many pages will you read in 7 days?", options:["90","105","115","135"], answer:1, explanation:"Rate = 45 / 3 = 15 pages per day. 15 x 7 = 105 pages." }
+      { id:"6x8", subject:"mixed", skill:"Rate and Ratio Word Problem", difficulty:"hard", question:"If you read 45 pages in 3 days, at the same rate, how many pages will you read in 7 days?", options:["90","105","115","135"], answer:1, explanation:"Rate = 45 / 3 = 15 pages per day. 15 x 7 = 105 pages." },
+
+      /* Additional Reading (4) */
+      { id:"6r11", subject:"reading", skill:"Unreliable Narrator", difficulty:"hard", question:"A narrator in a story says 'Everyone loves me,' but other characters avoid him. What does this suggest?", options:["The narrator is always right","The narrator may not be trustworthy","The other characters are wrong","The story has no conflict"], answer:1, explanation:"When a narrator's claims conflict with what other characters show, the narrator may be unreliable." },
+      { id:"6r12", subject:"reading", skill:"Theme Across Genres", difficulty:"hard", question:"A poem and a short story both show characters learning from mistakes. What do they share?", options:["The same characters","The same setting","A similar theme","The same rhyme scheme"], answer:2, explanation:"Different genres can share the same theme. Here both texts explore learning from mistakes." },
+      { id:"6r13", subject:"reading", skill:"Author's Bias", difficulty:"hard", question:"An article about cell phones in school only includes quotes from people who agree with the author. This shows:", options:["Good research","Author's bias","A balanced view","Scientific method"], answer:1, explanation:"Including only supporting views while ignoring opposing ones is a sign of author's bias." },
+      { id:"6r14", subject:"reading", skill:"Text Structure Comparison", difficulty:"medium", question:"Article A uses headings and bullet points. Article B tells events in time order. How are their structures different?", options:["A is organized by topic, B is chronological","Both are the same","A is fiction, B is nonfiction","B has headings too"], answer:0, explanation:"Headings and bullet points organize by topic. Time-order structure is chronological." },
+
+      /* Additional Math (4) */
+      { id:"6m11", subject:"math", skill:"GCF and LCM", difficulty:"hard", question:"What is the greatest common factor (GCF) of 12 and 18?", options:["2","3","6","9"], answer:2, explanation:"Factors of 12: 1, 2, 3, 4, 6, 12. Factors of 18: 1, 2, 3, 6, 9, 18. The greatest common factor is 6." },
+      { id:"6m12", subject:"math", skill:"Dividing Fractions", difficulty:"hard", question:"What is 3/4 divided by 1/2?", options:["3/8","3/2","1/2","2/3"], answer:1, explanation:"To divide fractions, multiply by the reciprocal: 3/4 x 2/1 = 6/4 = 3/2." },
+      { id:"6m13", subject:"math", skill:"Box Plots", difficulty:"medium", question:"On a box plot, the line inside the box represents the:", options:["Mean","Mode","Median","Range"], answer:2, explanation:"The line inside the box of a box plot shows the median, or middle value, of the data set." },
+      { id:"6m14", subject:"math", skill:"Coordinate Plane Reflections", difficulty:"medium", question:"Point A is at (3, 2). If you reflect it over the y-axis, where does it land?", options:["(3, -2)","(-3, 2)","(-3, -2)","(2, 3)"], answer:1, explanation:"Reflecting over the y-axis changes the sign of the x-coordinate. (3, 2) becomes (-3, 2)." },
+
+      /* Additional Mixed (4) */
+      { id:"6x9", subject:"mixed", skill:"Scientific Notation Intro", difficulty:"hard", question:"Which number equals 4.2 x 10^3?", options:["42","420","4,200","42,000"], answer:2, explanation:"4.2 x 10^3 means move the decimal 3 places right: 4,200." },
+      { id:"6x10", subject:"mixed", skill:"Analogy", difficulty:"medium", question:"Hot is to cold as tall is to:", options:["Big","Short","High","Fast"], answer:1, explanation:"Hot and cold are opposites. Tall and short are also opposites. This is an analogy." },
+      { id:"6x11", subject:"mixed", skill:"Real-World Percent", difficulty:"hard", question:"A shirt is $40 and sales tax is 8%. What is the total cost?", options:["$40.80","$43.20","$44.00","$48.00"], answer:1, explanation:"8% of $40 = $3.20. Total = $40 + $3.20 = $43.20." },
+      { id:"6x12", subject:"mixed", skill:"Cause-Effect in Informational Text", difficulty:"medium", question:"An article states that deforestation leads to habitat loss for animals. What is the effect?", options:["Deforestation","More trees grow","Animals lose their habitats","People plant gardens"], answer:2, explanation:"The effect is what happens as a result. Deforestation causes animals to lose their habitats." }
     ]
   };
 
@@ -186,6 +305,30 @@
      SECTION 2: BADGES BY GRADE (8 per grade)
      ================================================================ */
   var badgeDefs = {
+    "K": [
+      { id:"badge-letters", label:"Letter Champ", icon:"\ud83c\udd70\ufe0f", rule: function(s) { return (s.skills["Letter Sounds"]||0) >= 1; } },
+      { id:"badge-math", label:"Number Star", icon:"\u2b50", rule: function(s) { return (s.subjectCorrect.math||0) >= 2; } },
+      { id:"badge-shapes", label:"Shape Finder", icon:"\ud83d\udd37", rule: function(s) { return (s.skills["Shapes"]||0) >= 1; } },
+      { id:"badge-patterns", label:"Pattern Pro", icon:"\ud83c\udfa8", rule: function(s) { return (s.skills["Patterns"]||0) >= 1; } },
+      { id:"badge-streak3", label:"3-Day Streak", icon:"\ud83d\udd25", rule: function(s) { return getStreakInfo(s).current >= 3; } },
+      { id:"badge-boss", label:"Boss Slayer", icon:"\ud83d\udc7e", rule: function(s) { return s.bossWins >= 1; } }
+    ],
+    "1": [
+      { id:"badge-words", label:"Word Builder", icon:"\ud83d\udcdd", rule: function(s) { return (s.skills["Sight Words"]||0) >= 1; } },
+      { id:"badge-math", label:"Math Whiz", icon:"\u2795", rule: function(s) { return (s.subjectCorrect.math||0) >= 2; } },
+      { id:"badge-time", label:"Time Teller", icon:"\u23f0", rule: function(s) { return (s.skills["Telling Time"]||0) >= 1; } },
+      { id:"badge-story", label:"Story Star", icon:"\ud83c\udf1f", rule: function(s) { return (s.subjectCorrect.reading||0) >= 2; } },
+      { id:"badge-streak3", label:"3-Day Streak", icon:"\ud83d\udd25", rule: function(s) { return getStreakInfo(s).current >= 3; } },
+      { id:"badge-boss", label:"Boss Slayer", icon:"\ud83d\udc7e", rule: function(s) { return s.bossWins >= 1; } }
+    ],
+    "2": [
+      { id:"badge-reading", label:"Reading Champ", icon:"\ud83d\udcda", rule: function(s) { return (s.subjectCorrect.reading||0) >= 3; } },
+      { id:"badge-math", label:"Math Mountain", icon:"\u26f0\ufe0f", rule: function(s) { return (s.subjectCorrect.math||0) >= 3; } },
+      { id:"badge-vocab", label:"Vocab Hero", icon:"\ud83e\udde0", rule: function(s) { return (s.skills["Vocabulary in Context"]||0) >= 1; } },
+      { id:"badge-fractions", label:"Fraction Friend", icon:"\ud83c\udf55", rule: function(s) { return (s.skills["Fractions"]||0) >= 1; } },
+      { id:"badge-streak3", label:"3-Day Streak", icon:"\ud83d\udd25", rule: function(s) { return getStreakInfo(s).current >= 3; } },
+      { id:"badge-boss", label:"Boss Slayer", icon:"\ud83d\udc7e", rule: function(s) { return s.bossWins >= 1; } }
+    ],
     "3": [
       { id:"badge-main-idea", label:"Main Idea Master", icon:"\ud83d\udcda", rule: function(s) { return (s.skills["Main Idea"]||0) >= 2; } },
       { id:"badge-math", label:"Math Mountain Climber", icon:"\u26f0\ufe0f", rule: function(s) { return (s.subjectCorrect.math||0) >= 4; } },
@@ -438,9 +581,10 @@
       '<div style="margin-bottom:20px;text-align:left;">' +
         '<label style="font-weight:700;font-size:0.9rem;display:block;margin-bottom:6px;">Your Grade</label>' +
         '<div id="gradeSelect" style="display:flex;gap:8px;">' +
-          ["3","4","5","6"].map(function (g) {
+          ["K","1","2","3","4","5","6"].map(function (g) {
             var isSel = g === selectedGrade;
-            return '<button class="grade-pick' + (isSel ? ' selected' : '') + '" data-grade-pick="' + g + '" style="flex:1;padding:10px;border:2px solid ' + (isSel ? '#4f46e5' : '#ddd') + ';border-radius:8px;background:' + (isSel ? '#eef2ff' : '#fff') + ';font-weight:700;font-size:1.1rem;cursor:pointer;">Grade ' + g + '</button>';
+            var label = g === "K" ? "K" : "Grade " + g;
+            return '<button class="grade-pick' + (isSel ? ' selected' : '') + '" data-grade-pick="' + g + '" style="flex:1;padding:10px;border:2px solid ' + (isSel ? '#4f46e5' : '#ddd') + ';border-radius:8px;background:' + (isSel ? '#eef2ff' : '#fff') + ';font-weight:700;font-size:1.1rem;cursor:pointer;">' + label + '</button>';
           }).join("") +
         '</div>' +
       '</div>' +
