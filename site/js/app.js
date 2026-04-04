@@ -1050,7 +1050,7 @@
       if (e.count >= 3) label = "strong";
       else if (e.count >= 2) label = "improving";
       var color = label === "strong" ? "#22c55e" : label === "improving" ? "#f59e0b" : "#ef4444";
-      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f0f0f0;">' +
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);">' +
         '<span>' + escapeHtml(e.name) + '</span>' +
         '<span class="pill" style="background:' + color + ';color:#fff;font-size:0.75rem;padding:2px 8px;">' + label + '</span></div>';
     });
@@ -1082,19 +1082,55 @@
     /* Confidence log */
     var confStr = (state.confidenceLog || []).slice(-4).map(function (c) { return formatDate(c.date) + " " + c.value; }).join(" \u2022 ") || "No check-ins yet";
 
-    /* Suggested action */
-    var suggestion = "Start a practice session to get rolling!";
-    if (streakInfo.current >= 5) {
-      suggestion = "Amazing streak! Try a Boss Battle for extra challenge.";
-    } else if (streakInfo.current >= 3) {
-      suggestion = "Great momentum! Keep the streak going.";
-    } else if (Object.keys(state.missedQuestions || {}).length > 3) {
-      suggestion = "Focus on Weak Spot Repair to review missed questions.";
-    } else if (r > m + 3) {
-      suggestion = "Math could use some love. Try a Math Mountain session.";
-    } else if (m > r + 3) {
-      suggestion = "Reading skills need a boost. Try a Reading Boost session.";
+    /* Suggested action — smarter recommendations */
+    var totalAnswered = Object.keys(state.completedQuestions).length;
+    var totalCorrect = 0;
+    var tc;
+    for (tc in state.completedQuestions) {
+      if (state.completedQuestions.hasOwnProperty(tc) && state.completedQuestions[tc].correct) totalCorrect++;
     }
+    var accuracy = totalAnswered > 0 ? Math.round(totalCorrect / totalAnswered * 100) : 0;
+    var missedCount = Object.keys(state.missedQuestions || {}).length;
+
+    var suggestion = "Start a practice session to get rolling!";
+    var suggestionIcon = "\ud83d\ude80";
+    if (streakInfo.current >= 7) {
+      suggestion = "Incredible week! " + (profile ? profile.nickname : "Your student") + " is on a roll. Try the Boss Battle for an extra challenge.";
+      suggestionIcon = "\ud83c\udfc6";
+    } else if (streakInfo.current >= 5) {
+      suggestion = "Amazing streak! Keep practicing to hit 7 days for the Weekly Warrior banner.";
+      suggestionIcon = "\ud83d\udd25";
+    } else if (streakInfo.current >= 3) {
+      suggestion = "Great momentum! Two more days to reach a 5-day streak.";
+      suggestionIcon = "\u2b50";
+    } else if (missedCount > 5) {
+      suggestion = "There are " + missedCount + " missed questions to review. A Weak Spot Repair session would help the most right now.";
+      suggestionIcon = "\ud83d\udd27";
+    } else if (accuracy > 0 && accuracy < 60) {
+      suggestion = "Accuracy is at " + accuracy + "%. Slow down and focus on understanding explanations after each answer.";
+      suggestionIcon = "\ud83c\udfaf";
+    } else if (r > m + 5) {
+      suggestion = "Math could use attention. Try a focused Math session to balance out skills.";
+      suggestionIcon = "\ud83d\udcca";
+    } else if (m > r + 5) {
+      suggestion = "Reading needs a boost. Try a Reading Boost session with the cheat sheets nearby.";
+      suggestionIcon = "\ud83d\udcd6";
+    } else if (totalAnswered >= 20 && totalAnswered < 50) {
+      suggestion = "Good progress! " + (50 - totalAnswered) + " more questions to earn the Question Crusher banner.";
+      suggestionIcon = "\ud83d\udcaa";
+    } else if (totalAnswered > 0) {
+      suggestion = "Keep it up! Short daily sessions work better than long weekend marathons.";
+      suggestionIcon = "\ud83d\udca1";
+    }
+
+    /* Next milestone */
+    var nextMilestone = "";
+    if (totalAnswered < 5) nextMilestone = "Answer " + (5 - totalAnswered) + " more questions to earn the First Steps banner";
+    else if (totalAnswered < 25) nextMilestone = (25 - totalAnswered) + " more questions to earn the Dedicated Learner banner";
+    else if (totalAnswered < 50) nextMilestone = (50 - totalAnswered) + " more questions to earn the Question Crusher banner";
+    else if (streakInfo.current < 3) nextMilestone = "Build a 3-day study streak to earn the streak banner";
+    else if (streakInfo.current < 7) nextMilestone = (7 - streakInfo.current) + " more days for the Weekly Warrior banner";
+    else nextMilestone = "Keep going \u2014 every session makes learning stronger";
 
     /* Build the subject bars */
     function subjectBar(label, value, color) {
@@ -1104,7 +1140,7 @@
           '<span class="small" style="font-weight:600;">' + label + '</span>' +
           '<span class="small muted">' + value + ' correct</span>' +
         '</div>' +
-        '<div style="background:#e5e7eb;border-radius:6px;height:14px;overflow:hidden;">' +
+        '<div style="background:rgba(255,255,255,.08);border-radius:6px;height:14px;overflow:hidden;">' +
           '<div style="background:' + color + ';height:100%;width:' + pct + '%;border-radius:6px;transition:width 0.5s;"></div>' +
         '</div></div>';
     }
@@ -1164,7 +1200,11 @@
           '<h3>Confidence Log</h3>' +
           '<p class="small" style="margin-top:8px;">' + confStr + '</p>' +
           '<h3 style="margin-top:16px;">Suggested Next Step</h3>' +
-          '<p style="margin-top:8px;padding:12px;background:#f0fdf4;border-radius:8px;font-weight:600;">' + suggestion + '</p>' +
+          '<p style="margin-top:8px;padding:12px;background:rgba(94,230,255,.08);border:1px solid rgba(94,230,255,.14);border-radius:12px;font-weight:600;">' +
+            '<span style="font-size:1.2rem;margin-right:8px;">' + suggestionIcon + '</span>' + suggestion + '</p>' +
+          (nextMilestone ? '<div style="margin-top:12px;padding:10px 12px;border-radius:10px;background:rgba(255,209,102,.06);border:1px solid rgba(255,209,102,.12);">' +
+            '<div class="small" style="font-weight:800;color:var(--gold);margin-bottom:4px;">Next Milestone</div>' +
+            '<div class="small">' + nextMilestone + '</div></div>' : '') +
         '</div>' +
       '</div>';
   }
