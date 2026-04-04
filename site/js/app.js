@@ -1205,23 +1205,105 @@
     var root = document.getElementById("certificateArea");
     if (!root) return;
     var state = getState();
-    var total = 0;
-    var bk;
-    for (bk in state.badges) {
-      if (state.badges.hasOwnProperty(bk) && state.badges[bk]) total++;
-    }
     var profile = getProfile();
     var name = profile ? escapeHtml(profile.nickname) : "Student";
+    var gradeLabel = CURRENT_GRADE === "K" ? "Kindergarten" : "Grade " + CURRENT_GRADE;
+    var streakInfo = getStreakInfo(state);
+    var totalAnswered = Object.keys(state.completedQuestions).length;
+    var totalCorrect = 0;
+    var ck;
+    for (ck in state.completedQuestions) {
+      if (state.completedQuestions.hasOwnProperty(ck) && state.completedQuestions[ck].correct) totalCorrect++;
+    }
+    var badgeCount = 0;
+    for (ck in state.badges) {
+      if (state.badges.hasOwnProperty(ck) && state.badges[ck]) badgeCount++;
+    }
+    var bossBattleWins = (state.bossBattleScores || []).filter(function(s) { return s >= 7; }).length;
 
-    root.innerHTML =
-      '<div class="panel center">' +
-        '<h3>Victory Certificate</h3><p class="lead">Print this after a strong week or before test day.</p>' +
-        '<div class="callout" style="max-width:720px;margin:0 auto">' +
-          '<div class="small muted">Awarded by</div>' +
-          '<div style="font-size:1.6rem;font-weight:900;margin:6px 0">RISE Studio Labs STAAR Power Portal</div>' +
-          '<div style="font-size:1.1rem;font-weight:900">This certifies that <strong>' + name + '</strong> completed brave, focused study missions and earned <strong>' + total + '</strong> badge(s).</div>' +
-          '<div class="small muted" style="margin-top:12px">Brought to you by <strong>www.risestudiolabs.com</strong></div></div>' +
-        '<button class="btn secondary no-print" style="margin-top:14px" onclick="window.print()">Print Certificate</button></div>';
+    /* ── Determine which banners are earned ── */
+    var banners = [];
+    if (totalAnswered >= 5) {
+      banners.push({ icon: "\ud83c\udfaf", title: "First Steps", desc: "Answered 5 questions", color: "var(--cyan)" });
+    }
+    if (totalAnswered >= 25) {
+      banners.push({ icon: "\ud83d\udcaa", title: "Dedicated Learner", desc: "25 questions answered", color: "var(--purple)" });
+    }
+    if (totalAnswered >= 50) {
+      banners.push({ icon: "\ud83c\udfc6", title: "Question Crusher", desc: "50 questions conquered", color: "var(--gold)" });
+    }
+    if (streakInfo.current >= 3) {
+      banners.push({ icon: "\ud83d\udd25", title: "3-Day Streak", desc: streakInfo.current + " days strong", color: "var(--danger)" });
+    }
+    if (streakInfo.current >= 7) {
+      banners.push({ icon: "\u2b50", title: "Weekly Warrior", desc: "7-day streak!", color: "var(--gold)" });
+    }
+    if (badgeCount >= 3) {
+      banners.push({ icon: "\ud83c\udf1f", title: "Badge Collector", desc: badgeCount + " badges earned", color: "var(--lime)" });
+    }
+    if (bossBattleWins >= 1) {
+      banners.push({ icon: "\u2694\ufe0f", title: "Boss Slayer", desc: "Won a Boss Battle", color: "var(--hot)" });
+    }
+    if (totalCorrect >= 10 && totalAnswered >= 10 && (totalCorrect / totalAnswered) >= 0.8) {
+      banners.push({ icon: "\ud83e\udde0", title: "Sharp Mind", desc: "80%+ accuracy", color: "var(--teal)" });
+    }
+
+    /* ── Determine if major certificate is earned ── */
+    var certEarned = badgeCount >= 4 && totalAnswered >= 20 && streakInfo.current >= 3;
+
+    /* ── Render nothing if no banners earned yet ── */
+    if (banners.length === 0) {
+      root.innerHTML =
+        '<div class="panel center" style="opacity:.6">' +
+          '<h3>Victory Wall</h3>' +
+          '<p class="muted">Complete study sessions to start earning collectible achievement banners!</p>' +
+          '<p class="small muted">Answer 5 questions to earn your first banner.</p>' +
+        '</div>';
+      return;
+    }
+
+    /* ── Victory Wall with collectible banners ── */
+    var html = '<div class="panel"><h3 class="center">Victory Wall</h3>' +
+      '<p class="lead center">' + name + "'s achievements in " + gradeLabel + '</p>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:18px">';
+
+    var bi;
+    for (bi = 0; bi < banners.length; bi++) {
+      var b = banners[bi];
+      html += '<div style="width:120px;text-align:center;padding:18px 10px;border-radius:18px;' +
+        'background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));' +
+        'border:2px solid ' + b.color + ';position:relative">' +
+        '<div style="font-size:2.2rem">' + b.icon + '</div>' +
+        '<div style="font-weight:900;font-size:.85rem;margin-top:8px;color:' + b.color + '">' + b.title + '</div>' +
+        '<div class="small muted" style="margin-top:4px">' + b.desc + '</div>' +
+        '</div>';
+    }
+
+    html += '</div>';
+
+    /* Print banners button */
+    html += '<div class="center" style="margin-top:18px">' +
+      '<button class="btn ghost no-print" onclick="window.print()">Print My Banners</button></div>';
+
+    /* ── Major Certificate (only if milestone reached) ── */
+    if (certEarned) {
+      html += '<div style="margin-top:28px;padding:24px;border-radius:20px;' +
+        'background:linear-gradient(135deg,rgba(255,209,102,.08),rgba(154,124,255,.06));' +
+        'border:2px solid var(--gold);text-align:center">' +
+        '<div class="kicker">Major Milestone Achieved</div>' +
+        '<div style="font-size:1.5rem;font-weight:900;margin:10px 0">' +
+          gradeLabel + ' Study Champion</div>' +
+        '<div style="font-size:1rem;font-weight:700;color:var(--muted)">' +
+          'This certifies that <strong style="color:var(--text)">' + name + '</strong> demonstrated real dedication:<br>' +
+          badgeCount + ' badges earned \u2022 ' + totalAnswered + ' questions answered \u2022 ' + streakInfo.current + '-day streak</div>' +
+        '<div class="small muted" style="margin-top:14px">Awarded by RISE Studio Labs \u2022 STAAR Power Portal<br>' +
+          'Inspired by Sebastian & Matilda \u2014 for our kids</div>' +
+        '<button class="btn secondary no-print" style="margin-top:12px" onclick="window.print()">Print Certificate</button>' +
+      '</div>';
+    }
+
+    html += '</div>';
+    root.innerHTML = html;
   }
 
   /* ================================================================
