@@ -603,6 +603,73 @@
     return html;
   }
 
+  function buildTestWeekPanel(state) {
+    var now = new Date();
+    var readingDate = new Date("2026-04-07T08:00:00");
+    var mathDate = new Date("2026-04-21T08:00:00");
+    var daysToReading = Math.max(0, Math.ceil((readingDate - now) / 86400000));
+    var daysToMath = Math.max(0, Math.ceil((mathDate - now) / 86400000));
+
+    var totalAnswered = Object.keys(state.completedQuestions).length;
+    var totalCorrect = 0;
+    var ck;
+    for (ck in state.completedQuestions) {
+      if (state.completedQuestions.hasOwnProperty(ck) && state.completedQuestions[ck].correct) totalCorrect++;
+    }
+    var accuracy = totalAnswered > 0 ? Math.round(totalCorrect / totalAnswered * 100) : 0;
+    var missedCount = 0;
+    var mc = {};
+    var mi;
+    for (mi = 0; mi < (state.missedQuestions || []).length; mi++) {
+      mc[state.missedQuestions[mi]] = true;
+    }
+    missedCount = Object.keys(mc).length;
+    var streakInfo = getStreakInfo(state);
+
+    // Tonight's best move
+    var bestMove = "";
+    var bestIcon = "";
+    if (missedCount > 3) {
+      bestMove = "Replay your " + missedCount + " missed questions. Turning mistakes into knowledge is the fastest win right now.";
+      bestIcon = "\ud83d\udd27";
+    } else if (streakInfo.current < 2) {
+      bestMove = "Do 5 quick practice questions to start building momentum. Short sessions beat cramming.";
+      bestIcon = "\ud83d\ude80";
+    } else if (accuracy > 0 && accuracy < 70) {
+      bestMove = "Slow down with flashcards tonight. Flip through your grade deck to lock in the concepts.";
+      bestIcon = "\ud83e\udde0";
+    } else if (streakInfo.current >= 3 && accuracy >= 70) {
+      bestMove = "You're in great shape! Try a Boss Battle to build test-day confidence.";
+      bestIcon = "\ud83d\udd25";
+    } else {
+      bestMove = "Start with 5 practice questions. Focus on reading if the reading test is closer.";
+      bestIcon = "\ud83c\udfaf";
+    }
+
+    // Only show if tests are in the future or very recent
+    if (daysToReading > 30 && daysToMath > 30) return "";
+
+    return '<div class="panel" style="margin-bottom:18px;border:2px solid var(--gold);background:linear-gradient(135deg,rgba(255,209,102,.08),rgba(255,95,162,.05))">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">' +
+        '<div><h3 style="margin:0;color:var(--gold)">\ud83d\udd25 Test Week Mode</h3>' +
+        '<p class="small muted" style="margin:4px 0 0">STAAR is almost here. Make every session count.</p></div>' +
+        '<div style="display:flex;gap:16px">' +
+          (daysToReading > 0 ? '<div style="text-align:center"><div style="font-size:1.5rem;font-weight:900;color:var(--cyan)">' + daysToReading + '</div><div class="small muted">days to Reading</div></div>' : '<div style="text-align:center"><div class="small" style="color:var(--lime);font-weight:800">Reading: NOW</div></div>') +
+          (daysToMath > 0 ? '<div style="text-align:center"><div style="font-size:1.5rem;font-weight:900;color:var(--gold)">' + daysToMath + '</div><div class="small muted">days to Math</div></div>' : '<div style="text-align:center"><div class="small" style="color:var(--lime);font-weight:800">Math: NOW</div></div>') +
+        '</div>' +
+      '</div>' +
+      '<div style="margin-top:14px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line)">' +
+        '<div class="small" style="font-weight:900;color:var(--gold);margin-bottom:6px">Tonight\'s Best Move</div>' +
+        '<div style="font-weight:700">' + bestIcon + ' ' + bestMove + '</div>' +
+      '</div>' +
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">' +
+        '<a href="#flashcards" class="btn ghost" style="flex:1;text-align:center;min-width:120px">Flashcards</a>' +
+        '<a href="#practice" class="btn primary" style="flex:1;text-align:center;min-width:120px">Practice Now</a>' +
+        '<a href="#missions" class="btn ghost" style="flex:1;text-align:center;min-width:120px">Missions</a>' +
+      '</div>' +
+    '</div>';
+  }
+
   /* ================================================================
      SECTION 5: BADGE MANAGEMENT
      ================================================================ */
@@ -968,6 +1035,7 @@
     }
 
     root.innerHTML =
+      buildTestWeekPanel(state) +
       '<div class="grid-4">' +
         '<div class="stat-card"><div class="muted small">Answered</div><div class="kpi">' + totalAnswered + '</div></div>' +
         '<div class="stat-card"><div class="muted small">Accuracy</div><div class="kpi">' + percent + '%</div></div>' +
@@ -1199,6 +1267,15 @@
         '<div class="panel">' +
           '<h3>Confidence Log</h3>' +
           '<p class="small" style="margin-top:8px;">' + confStr + '</p>' +
+          '<h3 style="margin-top:16px;">Quick Start Tonight</h3>' +
+          '<div style="margin-top:8px">' +
+            '<div style="padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center">' +
+              '<span style="font-size:1.2rem">\u23f1\ufe0f</span><div><strong>2 min:</strong> Flip through flashcards for your grade</div></div>' +
+            '<div style="padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center">' +
+              '<span style="font-size:1.2rem">\ud83c\udfaf</span><div><strong>5 min:</strong> Do 5 practice questions</div></div>' +
+            '<div style="padding:8px 0;display:flex;gap:10px;align-items:center">' +
+              '<span style="font-size:1.2rem">\ud83d\udcaa</span><div><strong>10 min:</strong> Complete a full mission + replay missed</div></div>' +
+          '</div>' +
           '<h3 style="margin-top:16px;">Suggested Next Step</h3>' +
           '<p style="margin-top:8px;padding:12px;background:rgba(94,230,255,.08);border:1px solid rgba(94,230,255,.14);border-radius:12px;font-weight:600;">' +
             '<span style="font-size:1.2rem;margin-right:8px;">' + suggestionIcon + '</span>' + suggestion + '</p>' +
