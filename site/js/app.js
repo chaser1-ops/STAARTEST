@@ -1791,7 +1791,271 @@
   }
 
   /* ================================================================
-     SECTION 19: BOOT SEQUENCE
+     SECTION 19: FLASHCARD LAB
+     ================================================================ */
+  var flashcardDecks = {
+    /* ── KINDERGARTEN ── */
+    "K": [
+      { name: "ABC & 123", cards: [
+        { front: "What sound does the letter B make?", back: "/b/ like in ball and bat", hint: "Think of bouncing a ball!", category: "reading" },
+        { front: "Which words rhyme: cat, dog, hat?", back: "Cat and hat rhyme (they end in -at)", hint: "Listen to the ending sound.", category: "reading" },
+        { front: "What comes after 10, 11, 12?", back: "13", hint: "Keep counting: ten, eleven, twelve...", category: "math" },
+        { front: "How many sides does a rectangle have?", back: "4 sides", hint: "Count each side: top, bottom, left, right.", category: "math" },
+        { front: "What comes next: red, blue, red, blue, ___?", back: "Red! The pattern repeats.", hint: "Look for the repeating part.", category: "math" },
+        { front: "Which is more: 7 or 3?", back: "7 is more than 3", hint: "Count up from 1. Which number do you reach later?", category: "math" }
+      ]}
+    ],
+    /* ── GRADE 1 ── */
+    "1": [
+      { name: "First Grade Foundations", cards: [
+        { front: "What is a sight word?", back: "A word you know by looking at it (the, is, and, was)", hint: "You don't sound it out, you just know it!", category: "reading" },
+        { front: "What are the 3 parts of a story?", back: "Beginning, middle, and end", hint: "Think: What happened first, next, last?", category: "reading" },
+        { front: "What is 7 + 5?", back: "12", hint: "Start at 7 and count up 5 more.", category: "math" },
+        { front: "What is 14 - 6?", back: "8", hint: "Start at 14 and count back 6.", category: "math" },
+        { front: "In the number 15, what does the 1 mean?", back: "1 ten (10)", hint: "The left digit tells tens, the right tells ones.", category: "math" },
+        { front: "What time is it when the short hand is on 3?", back: "3 o'clock", hint: "The short hand points to the hour.", category: "math" }
+      ]}
+    ],
+    /* ── GRADE 2 ── */
+    "2": [
+      { name: "Second Grade Skills", cards: [
+        { front: "What is the main idea of a passage?", back: "What the passage is mostly about", hint: "Ask: What's the big point?", category: "reading" },
+        { front: "How do you figure out a word you don't know?", back: "Use context clues: read the words around it", hint: "The sentence gives hints about the meaning.", category: "reading" },
+        { front: "What is 58 + 34?", back: "92", hint: "Add tens first (50+30=80), then ones (8+4=12), combine.", category: "math" },
+        { front: "Count by 5s from 25 to 50.", back: "25, 30, 35, 40, 45, 50", hint: "Add 5 each time.", category: "math" },
+        { front: "What does 1/2 mean?", back: "One out of two equal parts", hint: "Cut something in half. Each piece is 1/2.", category: "math" },
+        { front: "How many inches in a foot?", back: "12 inches", hint: "Think of a ruler from 0 to 12.", category: "math" }
+      ]}
+    ],
+    /* ── GRADE 3 ── */
+    "3": [
+      { name: "Reading Power Moves", cards: [
+        { front: "What is the main idea?", back: "The big point the passage is mostly about", hint: "Ask: What is this MOSTLY about?", category: "reading" },
+        { front: "What are context clues?", back: "Words around an unknown word that help you figure out its meaning", hint: "Re-read the sentence. The clue is nearby.", category: "reading" },
+        { front: "What is the author's purpose?", back: "The reason the author wrote the text: to inform, persuade, or entertain", hint: "PIE: Persuade, Inform, Entertain.", category: "reading" },
+        { front: "How do you find a character trait?", back: "Look at what the character says, does, thinks, and feels", hint: "Actions speak louder than words.", category: "reading" },
+        { front: "What is an inference?", back: "A smart guess using clues from the text + what you already know", hint: "Text clue + brain = inference.", category: "reading" },
+        { front: "What are text features?", back: "Headings, captions, bold words, diagrams, maps that help you find info", hint: "They guide your eyes to key info.", category: "reading" },
+        { front: "What is the theme of a story?", back: "The life lesson or message the author wants you to learn", hint: "What did the character learn?", category: "reading" },
+        { front: "How do you write a good summary?", back: "Tell the most important parts in order, leave out small details", hint: "Somebody-Wanted-But-So-Then.", category: "reading" }
+      ]},
+      { name: "Math Quick Facts", cards: [
+        { front: "What is place value?", back: "The value of a digit based on its position (ones, tens, hundreds, thousands)", hint: "The 3 in 345 means 3 hundreds.", category: "math" },
+        { front: "How do you round to the nearest ten?", back: "Look at the ones digit: 5 or more round up, 4 or less round down", hint: "5 or more, let it soar. 4 or less, let it rest.", category: "math" },
+        { front: "What is a fraction?", back: "A part of a whole. Top number = parts you have. Bottom = total equal parts.", hint: "Think of splitting a pizza.", category: "math" },
+        { front: "How do you find the area of a rectangle?", back: "Length x Width", hint: "Count the squares INSIDE the shape.", category: "math" },
+        { front: "How do you find the perimeter?", back: "Add up ALL the side lengths around the shape", hint: "Walk around the outside and add each side.", category: "math" },
+        { front: "What is 7 x 8?", back: "56", hint: "5-6-7-8: 56 = 7 x 8!", category: "math" },
+        { front: "If a toy costs $3.75, how much change from $5?", back: "$1.25", hint: "Count up from $3.75 to $5.00.", category: "math" },
+        { front: "How do you find elapsed time?", back: "Count from the start time to the end time", hint: "Use a number line or clock to count the jumps.", category: "math" }
+      ]}
+    ],
+    /* ── GRADE 4 ── */
+    "4": [
+      { name: "Reading Strategies", cards: [
+        { front: "How do you make an inference?", back: "Combine text evidence with your own knowledge to draw a conclusion", hint: "Evidence + What I Know = Inference.", category: "reading" },
+        { front: "What is figurative language?", back: "Words used in a creative way: similes, metaphors, personification, idioms", hint: "It doesn't mean EXACTLY what it says.", category: "reading" },
+        { front: "What is the author's purpose?", back: "To persuade, inform, entertain, or express feelings", hint: "Ask: WHY did the author write this?", category: "reading" },
+        { front: "How do you identify the theme?", back: "Look at the character's journey and the lesson learned", hint: "What message would the author want you to remember?", category: "reading" },
+        { front: "What are the 5 text structures?", back: "Description, sequence, compare/contrast, cause/effect, problem/solution", hint: "Look for signal words to spot the structure.", category: "reading" },
+        { front: "What makes a strong summary?", back: "Main idea + key details, in order, no opinions", hint: "Stick to the facts. Keep it short.", category: "reading" },
+        { front: "What is genre?", back: "The category of a text: fiction, nonfiction, poetry, drama", hint: "Fiction = made up. Nonfiction = real.", category: "reading" },
+        { front: "How do you compare and contrast?", back: "Find what is the SAME and what is DIFFERENT between two things", hint: "Use a Venn diagram: both in the middle.", category: "reading" }
+      ]},
+      { name: "Math Moves", cards: [
+        { front: "How do you multiply multi-digit numbers?", back: "Use the standard algorithm: multiply each digit and add partial products", hint: "Line up place values. Don't forget to carry.", category: "math" },
+        { front: "What is division?", back: "Splitting a number into equal groups", hint: "Division is the opposite of multiplication.", category: "math" },
+        { front: "What are equivalent fractions?", back: "Fractions that represent the same amount (1/2 = 2/4 = 3/6)", hint: "Multiply or divide top and bottom by the same number.", category: "math" },
+        { front: "What is a right angle?", back: "An angle that measures exactly 90 degrees, like a corner of a book", hint: "It looks like an L.", category: "math" },
+        { front: "Perimeter vs. area: what's the difference?", back: "Perimeter = distance around. Area = space inside.", hint: "Perimeter = fence. Area = carpet.", category: "math" },
+        { front: "How do you solve a multi-step word problem?", back: "Read, find what's asked, break into steps, solve each part, check", hint: "Underline the question. Circle the numbers.", category: "math" },
+        { front: "How many cups in a gallon?", back: "16 cups", hint: "Gallon(4 quarts) > Quart(2 pints) > Pint(2 cups).", category: "math" },
+        { front: "How do you read a bar graph?", back: "Read the title, check the axes, compare the bar heights", hint: "The taller the bar, the bigger the value.", category: "math" }
+      ]}
+    ],
+    /* ── GRADE 5 ── */
+    "5": [
+      { name: "Reading Deep Dive", cards: [
+        { front: "How do you determine the theme?", back: "Track how the character changes and what lesson they learn", hint: "Theme is NOT the topic. It's the message.", category: "reading" },
+        { front: "First person vs. third person point of view?", back: "First person: narrator is a character (I, me). Third person: narrator is outside (he, she, they).", hint: "If you see 'I' telling the story, it's first person.", category: "reading" },
+        { front: "How do you identify text structure?", back: "Look for signal words: first/next (sequence), because/so (cause-effect), however/but (compare-contrast)", hint: "Signal words are your clues.", category: "reading" },
+        { front: "How do prefixes and suffixes help with vocabulary?", back: "They change a word's meaning. Un- means not. -ful means full of. -less means without.", hint: "Break the word into parts.", category: "reading" },
+        { front: "What is author's craft?", back: "The techniques an author uses: word choice, imagery, dialogue, pacing", hint: "Ask: HOW did the author make me feel this way?", category: "reading" },
+        { front: "How do you summarize a text?", back: "Identify the main idea, key events/details, and conclusion. Leave out opinions.", hint: "Who did what, why, and what happened?", category: "reading" },
+        { front: "How do you compare two texts on the same topic?", back: "Look at how each text treats the topic: similar ideas, different details or perspectives", hint: "What do they agree on? Where do they differ?", category: "reading" }
+      ]},
+      { name: "Math Mastery", cards: [
+        { front: "How do you add/subtract decimals?", back: "Line up the decimal points, then add or subtract as usual", hint: "Keep the dots in a straight line.", category: "math" },
+        { front: "How do you add fractions with unlike denominators?", back: "Find a common denominator, convert, then add the numerators", hint: "You can't add pieces of different sizes. Make them the same.", category: "math" },
+        { front: "How do you find the volume of a rectangular prism?", back: "Length x Width x Height", hint: "Volume fills the inside, like filling a box with cubes.", category: "math" },
+        { front: "What is the order of operations?", back: "Parentheses, Exponents, Multiply/Divide (left to right), Add/Subtract (left to right)", hint: "PEMDAS: Please Excuse My Dear Aunt Sally.", category: "math" },
+        { front: "How do you plot a point on a coordinate plane?", back: "Start at the origin. Go right for x, then up for y. Write (x, y).", hint: "x comes first (run), y comes second (rise).", category: "math" },
+        { front: "How do you do long division?", back: "Divide, Multiply, Subtract, Bring down. Repeat.", hint: "Does McDonald's Sell Burgers? D-M-S-B.", category: "math" }
+      ]},
+      { name: "Science Essentials", cards: [
+        { front: "What are the 3 states of matter?", back: "Solid (fixed shape), liquid (takes shape of container), gas (fills all space)", hint: "Ice, water, steam. Same stuff, different energy.", category: "science" },
+        { front: "What is an ecosystem?", back: "A community of living things and their nonliving environment working together", hint: "Living + nonliving = ecosystem.", category: "science" },
+        { front: "Describe the water cycle.", back: "Evaporation (water rises), condensation (clouds form), precipitation (rain/snow falls), collection", hint: "Up, cool, fall, collect. Repeat.", category: "science" },
+        { front: "What is force?", back: "A push or pull that can change an object's motion", hint: "No force = no change in movement.", category: "science" },
+        { front: "Inherited vs. learned traits?", back: "Inherited: from parents (eye color). Learned: from experience (riding a bike).", hint: "Born with it vs. taught it.", category: "science" },
+        { front: "What are the forms of energy?", back: "Light, heat, sound, electrical, mechanical", hint: "Energy makes things happen. It comes in many forms.", category: "science" }
+      ]}
+    ],
+    /* ── GRADE 6 ── */
+    "6": [
+      { name: "Critical Reading", cards: [
+        { front: "How do you analyze a text?", back: "Examine the author's choices: structure, language, evidence, and purpose", hint: "Ask: What did the author do, and why?", category: "reading" },
+        { front: "How do you evaluate an argument?", back: "Check the claim, look for evidence, decide if the reasoning is logical", hint: "Claim + Evidence + Reasoning = strong argument.", category: "reading" },
+        { front: "What is figurative language and why does it matter?", back: "Non-literal language (metaphor, simile, hyperbole) that creates imagery and emotion", hint: "It paints a picture in the reader's mind.", category: "reading" },
+        { front: "What is tone in writing?", back: "The author's attitude toward the subject: serious, humorous, sarcastic, hopeful", hint: "Tone = the author's feelings showing through word choice.", category: "reading" },
+        { front: "What are rhetorical devices?", back: "Techniques to persuade: repetition, rhetorical questions, emotional appeal, parallelism", hint: "Used in speeches and ads to convince you.", category: "reading" },
+        { front: "Why does text structure matter?", back: "It reveals how the author organized ideas and helps you predict what comes next", hint: "Structure = the blueprint of the text.", category: "reading" }
+      ]},
+      { name: "Math Power", cards: [
+        { front: "What is a ratio?", back: "A comparison of two quantities (3:2 means 3 for every 2)", hint: "Ratios compare. Think: for every ___.", category: "math" },
+        { front: "How do you find a percent of a number?", back: "Convert percent to decimal (divide by 100), then multiply", hint: "25% of 80: 0.25 x 80 = 20.", category: "math" },
+        { front: "What is an algebraic expression?", back: "A math phrase with numbers, variables, and operations (3x + 5)", hint: "A variable is a letter standing in for a number.", category: "math" },
+        { front: "How do you find the area of a triangle?", back: "A = 1/2 x base x height", hint: "A triangle is half a rectangle.", category: "math" },
+        { front: "What are integers?", back: "Whole numbers and their negatives: ..., -3, -2, -1, 0, 1, 2, 3, ...", hint: "They live on the number line in both directions.", category: "math" },
+        { front: "What is mean (average)?", back: "Add all the values, then divide by how many there are", hint: "Mean = total divided by count.", category: "math" }
+      ]}
+    ]
+  };
+
+  /* ── Flashcard state ── */
+  var fcState = { deckIndex: 0, cardIndex: 0, flipped: false, knownCards: [], studyCards: [] };
+
+  function initFlashcardLab() {
+    var el = document.getElementById("flashcardLab");
+    if (!el || !CURRENT_GRADE) return;
+    var gradeDecks = flashcardDecks[CURRENT_GRADE];
+    if (!gradeDecks || gradeDecks.length === 0) return;
+
+    fcState = { deckIndex: 0, cardIndex: 0, flipped: false, knownCards: [], studyCards: [] };
+    renderFlashcardLab(el, gradeDecks);
+  }
+
+  function renderFlashcardLab(el, decks) {
+    var deck = decks[fcState.deckIndex];
+    var card = deck.cards[fcState.cardIndex];
+    var total = deck.cards.length;
+    var idx = fcState.cardIndex;
+
+    /* Grade color map */
+    var gradeColors = { "K":"#e879f9","1":"#f472b6","2":"#fb923c","3":"#5ee6ff","4":"#9a7cff","5":"#facc15","6":"#34d399" };
+    var borderColor = gradeColors[CURRENT_GRADE] || "var(--cyan)";
+
+    var html = "";
+
+    /* Deck pills */
+    html += '<div class="flashcard-deck-pills">';
+    for (var d = 0; d < decks.length; d++) {
+      var active = d === fcState.deckIndex ? ' style="background:' + borderColor + ';color:#111;font-weight:800"' : '';
+      html += '<button class="btn ghost fc-deck-pill" data-deck="' + d + '"' + active + '>' + decks[d].name + '</button>';
+    }
+    html += '</div>';
+
+    /* Card */
+    html += '<div class="flashcard-container" id="fcFlip">';
+    html += '<div class="flashcard' + (fcState.flipped ? ' flipped' : '') + '" style="border-color:' + borderColor + '">';
+    /* Front */
+    html += '<div class="flashcard-face flashcard-front" style="border:2px solid ' + borderColor + '">';
+    html += '<div class="flashcard-prompt">' + card.front + '</div>';
+    html += '<div class="flashcard-hint">' + card.hint + '</div>';
+    html += '<div style="margin-top:14px;font-size:.8rem;color:var(--muted)">Tap to flip</div>';
+    html += '</div>';
+    /* Back */
+    html += '<div class="flashcard-face flashcard-back" style="border:2px solid ' + borderColor + '">';
+    html += '<div class="flashcard-answer">' + card.back + '</div>';
+    html += '<div class="flashcard-category">' + card.category + '</div>';
+    html += '</div>';
+    html += '</div></div>';
+
+    /* Counter */
+    html += '<div class="flashcard-counter">' + (idx + 1) + ' of ' + total + '</div>';
+
+    /* Navigation */
+    html += '<div class="flashcard-nav">';
+    html += '<button class="btn ghost fc-prev"' + (idx === 0 ? ' disabled style="opacity:.4"' : '') + '>Prev</button>';
+    html += '<button class="btn ghost fc-next"' + (idx === total - 1 ? ' disabled style="opacity:.4"' : '') + '>Next</button>';
+    html += '</div>';
+
+    /* Confidence buttons */
+    html += '<div class="flashcard-confidence">';
+    html += '<button class="btn fc-know" style="background:#14b8a6;color:#fff;font-weight:800">Know It</button>';
+    html += '<button class="btn fc-study" style="background:#f59e0b;color:#111;font-weight:800">Study More</button>';
+    html += '</div>';
+
+    /* Progress summary */
+    var knownCount = fcState.knownCards.length;
+    var studyCount = fcState.studyCards.length;
+    if (knownCount + studyCount > 0) {
+      html += '<div style="text-align:center;margin-top:12px;font-size:.85rem;color:var(--muted)">';
+      html += '<span style="color:#14b8a6;font-weight:700">' + knownCount + ' known</span> &middot; ';
+      html += '<span style="color:#f59e0b;font-weight:700">' + studyCount + ' studying</span>';
+      html += '</div>';
+    }
+
+    el.innerHTML = html;
+
+    /* Event listeners */
+    el.querySelector("#fcFlip").addEventListener("click", function () {
+      fcState.flipped = !fcState.flipped;
+      renderFlashcardLab(el, decks);
+    });
+
+    var prevBtn = el.querySelector(".fc-prev");
+    var nextBtn = el.querySelector(".fc-next");
+    if (prevBtn) prevBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (fcState.cardIndex > 0) { fcState.cardIndex--; fcState.flipped = false; renderFlashcardLab(el, decks); }
+    });
+    if (nextBtn) nextBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (fcState.cardIndex < deck.cards.length - 1) { fcState.cardIndex++; fcState.flipped = false; renderFlashcardLab(el, decks); }
+    });
+
+    el.querySelector(".fc-know").addEventListener("click", function (e) {
+      e.stopPropagation();
+      var key = fcState.deckIndex + "-" + fcState.cardIndex;
+      if (fcState.knownCards.indexOf(key) === -1) fcState.knownCards.push(key);
+      var si = fcState.studyCards.indexOf(key);
+      if (si > -1) fcState.studyCards.splice(si, 1);
+      advanceFlashcard(el, decks);
+    });
+
+    el.querySelector(".fc-study").addEventListener("click", function (e) {
+      e.stopPropagation();
+      var key = fcState.deckIndex + "-" + fcState.cardIndex;
+      if (fcState.studyCards.indexOf(key) === -1) fcState.studyCards.push(key);
+      var ki = fcState.knownCards.indexOf(key);
+      if (ki > -1) fcState.knownCards.splice(ki, 1);
+      advanceFlashcard(el, decks);
+    });
+
+    var pills = el.querySelectorAll(".fc-deck-pill");
+    for (var p = 0; p < pills.length; p++) {
+      pills[p].addEventListener("click", function (e) {
+        e.stopPropagation();
+        fcState.deckIndex = parseInt(this.getAttribute("data-deck"), 10);
+        fcState.cardIndex = 0;
+        fcState.flipped = false;
+        renderFlashcardLab(el, decks);
+      });
+    }
+  }
+
+  function advanceFlashcard(el, decks) {
+    var deck = decks[fcState.deckIndex];
+    if (fcState.cardIndex < deck.cards.length - 1) {
+      fcState.cardIndex++;
+    }
+    fcState.flipped = false;
+    renderFlashcardLab(el, decks);
+  }
+
+  /* ================================================================
+     SECTION 20: BOOT SEQUENCE
      ================================================================ */
   document.addEventListener("DOMContentLoaded", function () {
     /* Profile check */
@@ -1815,5 +2079,6 @@
     renderDashboard();
     initYear();
     initToggleAnswers();
+    initFlashcardLab();
   });
 })();
