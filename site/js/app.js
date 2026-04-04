@@ -35,7 +35,23 @@
       { id:"Kx1", subject:"mixed", skill:"Colors", difficulty:"easy", question:"If you mix red and yellow paint, what color do you get?", options:["Green","Purple","Orange","Blue"], answer:2, explanation:"Red and yellow mixed together make orange!" },
       { id:"Kx2", subject:"mixed", skill:"Patterns", difficulty:"easy", question:"What comes next? Red, Blue, Red, Blue, ___", options:["Green","Blue","Red","Yellow"], answer:2, explanation:"The pattern goes Red, Blue, Red, Blue. Next is Red again!" },
       { id:"Kx3", subject:"mixed", skill:"Following Directions", difficulty:"easy", question:"If someone says 'clap two times,' how many times should you clap?", options:["1","2","3","4"], answer:1, explanation:"The direction says two times, so you clap 2 times." },
-      { id:"Kx4", subject:"mixed", skill:"Sorting", difficulty:"easy", question:"Which one does NOT belong in a group of fruits?", options:["Apple","Banana","Carrot","Grape"], answer:2, explanation:"A carrot is a vegetable, not a fruit. It does not belong with the fruits." }
+      { id:"Kx4", subject:"mixed", skill:"Sorting", difficulty:"easy", question:"Which one does NOT belong in a group of fruits?", options:["Apple","Banana","Carrot","Grape"], answer:2, explanation:"A carrot is a vegetable, not a fruit. It does not belong with the fruits." },
+
+      /* Reading (3 more) */
+      { id:"Kr5", subject:"reading", skill:"Letter Recognition", difficulty:"easy", question:"Which of these is an uppercase letter?", options:["b","d","G","m"], answer:2, explanation:"G is an uppercase (capital) letter. The others are all lowercase letters." },
+      { id:"Kr6", subject:"reading", skill:"Beginning Sounds", difficulty:"easy", question:"What sound does the word 'fish' start with?", options:["/m/","/f/","/s/","/t/"], answer:1, explanation:"The word 'fish' starts with the /f/ sound. Say it slowly: fff-ish!" },
+      { id:"Kr7", subject:"reading", skill:"Book Parts", difficulty:"easy", question:"Where do you find the title of a book?", options:["On the last page","On the front cover","Inside a picture","Under the table"], answer:1, explanation:"The title of a book is on the front cover. It tells you the name of the book." },
+
+      /* Math (3 more) */
+      { id:"Km5", subject:"math", skill:"Counting Backward", difficulty:"easy", question:"What number comes next when counting backward? 5, 4, 3, ___", options:["5","1","2","6"], answer:2, explanation:"When we count backward, we go one less each time. After 3 comes 2." },
+      { id:"Km6", subject:"math", skill:"Number Sequence", difficulty:"easy", question:"What number comes next? 7, 8, ___", options:["6","10","9","5"], answer:2, explanation:"When we count forward, the number after 8 is 9." },
+      { id:"Km7", subject:"math", skill:"Sorting by Size", difficulty:"easy", question:"Which group is sorted from SMALLEST to BIGGEST?", options:["Elephant, dog, ant","Ant, dog, elephant","Dog, ant, elephant","Elephant, ant, dog"], answer:1, explanation:"An ant is the smallest, a dog is medium, and an elephant is the biggest. That is smallest to biggest!" },
+
+      /* Mixed (4 more) */
+      { id:"Kx5", subject:"mixed", skill:"Days of the Week", difficulty:"easy", question:"Which day comes right after Monday?", options:["Sunday","Wednesday","Tuesday","Friday"], answer:2, explanation:"The days go: Sunday, Monday, Tuesday. So Tuesday comes right after Monday." },
+      { id:"Kx6", subject:"mixed", skill:"Body Parts", difficulty:"easy", question:"Which body part do we use to hear sounds?", options:["Eyes","Ears","Nose","Hands"], answer:1, explanation:"We use our ears to hear sounds like music, voices, and birds singing." },
+      { id:"Kx7", subject:"mixed", skill:"Following Directions", difficulty:"easy", question:"If someone says 'pick up the red crayon and put it in the box,' how many things do you need to do?", options:["1","2","3","4"], answer:1, explanation:"There are 2 steps: first pick up the red crayon, then put it in the box. That is following 2-step directions!" },
+      { id:"Kx8", subject:"mixed", skill:"Color Matching", difficulty:"easy", question:"Which object is usually yellow?", options:["A fire truck","A banana","A blueberry","A leaf in summer"], answer:1, explanation:"A banana is usually yellow! Fire trucks are red, blueberries are blue, and leaves in summer are green." }
     ],
 
     /* ── GRADE 1 (~12 questions) ── */
@@ -56,7 +72,23 @@
       { id:"1x1", subject:"mixed", skill:"Seasons", difficulty:"easy", question:"In which season do leaves change color and fall from trees?", options:["Summer","Winter","Fall","Spring"], answer:2, explanation:"In fall (autumn), leaves change color and fall off the trees." },
       { id:"1x2", subject:"mixed", skill:"Community Helpers", difficulty:"easy", question:"Who helps put out fires?", options:["A teacher","A doctor","A firefighter","A mail carrier"], answer:2, explanation:"A firefighter is a community helper who puts out fires and keeps people safe." },
       { id:"1x3", subject:"mixed", skill:"Comparing Objects", difficulty:"easy", question:"Which holds MORE water, a cup or a bathtub?", options:["A cup","A bathtub","They hold the same","A spoon"], answer:1, explanation:"A bathtub is much bigger and holds more water than a cup." },
-      { id:"1x4", subject:"mixed", skill:"Sequencing Events", difficulty:"easy", question:"What do you do FIRST in the morning: eat breakfast or brush your teeth after eating?", options:["Brush teeth","Eat breakfast","Go to sleep","Watch TV"], answer:1, explanation:"You eat breakfast first, then brush your teeth after eating." }
+      { id:"1x4", subject:"mixed", skill:"Sequencing Events", difficulty:"easy", question:"What do you do FIRST in the morning: eat breakfast or brush your teeth after eating?", options:["Brush teeth","Eat breakfast","Go to sleep","Watch TV"], answer:1, explanation:"You eat breakfast first, then brush your teeth after eating." },
+
+      /* Reading (3 more) */
+      { id:"1r5", subject:"reading", skill:"Compound Words", difficulty:"easy", question:"Which word is a compound word (two small words put together)?", options:["Running","Sunshine","Kitten","Purple"], answer:1, explanation:"'Sunshine' is made of two words: 'sun' + 'shine.' That makes it a compound word!" },
+      { id:"1r6", subject:"reading", skill:"Topic Sentence", difficulty:"easy", question:"Read this: 'Dogs make great pets. They are friendly. They love to play.' Which sentence tells the main topic?", options:["They are friendly.","They love to play.","Dogs make great pets.","Dogs are big."], answer:2, explanation:"The topic sentence tells the big idea. 'Dogs make great pets' is the main topic that the other sentences support." },
+      { id:"1r7", subject:"reading", skill:"Retelling a Story", difficulty:"easy", question:"A frog jumped into a pond, caught a fly, and sat on a lily pad. What happened LAST?", options:["The frog jumped into the pond","The frog caught a fly","The frog sat on a lily pad","The frog went to sleep"], answer:2, explanation:"Last means what happened at the very end. The frog sat on a lily pad last." },
+
+      /* Math (3 more) */
+      { id:"1m5", subject:"math", skill:"Even and Odd", difficulty:"easy", question:"Which number is even?", options:["3","5","6","9"], answer:2, explanation:"Even numbers can be split into two equal groups with nothing left over. 6 is even because 6 = 3 + 3." },
+      { id:"1m6", subject:"math", skill:"Counting by 10s", difficulty:"easy", question:"Count by 10s: 10, 20, 30, 40, ___. What comes next?", options:["41","45","50","60"], answer:2, explanation:"When you count by 10s, you add 10 each time. 40 + 10 = 50." },
+      { id:"1m7", subject:"math", skill:"Comparing Numbers", difficulty:"easy", question:"Which symbol goes in the blank? 12 ___ 9", options:["<","=",">","+"  ], answer:2, explanation:"12 is greater than 9, so we use the > symbol. The open side always faces the bigger number." },
+
+      /* Mixed (4 more) */
+      { id:"1x5", subject:"mixed", skill:"Calendar Reading", difficulty:"easy", question:"Which month comes right after January?", options:["March","February","December","April"], answer:1, explanation:"The months go: January, February, March. So February comes right after January." },
+      { id:"1x6", subject:"mixed", skill:"Making Predictions", difficulty:"easy", question:"You see a picture of a boy holding an umbrella and dark clouds in the sky. What will probably happen?", options:["It will snow","It will be sunny","It will rain","He will go swimming"], answer:2, explanation:"Dark clouds and an umbrella are clues that it will probably rain." },
+      { id:"1x7", subject:"mixed", skill:"Five Senses", difficulty:"easy", question:"Which of the five senses do you use when you smell a flower?", options:["Sight","Taste","Smell","Touch"], answer:2, explanation:"You use your sense of smell to enjoy how a flower smells. The five senses are sight, hearing, smell, taste, and touch." },
+      { id:"1x8", subject:"mixed", skill:"Animal Categories", difficulty:"easy", question:"Which animal lives on a farm?", options:["Lion","Cow","Zebra","Bear"], answer:1, explanation:"A cow lives on a farm. Lions, zebras, and bears are wild animals that do not live on farms." }
     ],
 
     /* ── GRADE 2 (~14 questions) ── */
@@ -79,7 +111,21 @@
       { id:"2x1", subject:"mixed", skill:"Map Skills", difficulty:"easy", question:"On a map, what does a blue area usually show?", options:["Mountains","Water","Roads","Parks"], answer:1, explanation:"Blue on a map usually shows water like rivers, lakes, or oceans." },
       { id:"2x2", subject:"mixed", skill:"Money", difficulty:"medium", question:"A toy costs 50 cents. You have 2 quarters. Do you have enough?", options:["No, you need more","Yes, exactly enough","You have too much","You cannot tell"], answer:1, explanation:"Each quarter is worth 25 cents. Two quarters equal 50 cents, exactly enough!" },
       { id:"2x3", subject:"mixed", skill:"Cause and Effect", difficulty:"easy", question:"The ice cream melted because it was left in the sun. Why did the ice cream melt?", options:["It was in the freezer","It was left in the sun","Someone ate it","It was too cold"], answer:1, explanation:"The cause is being left in the sun. The heat made the ice cream melt." },
-      { id:"2x4", subject:"mixed", skill:"Informational Text", difficulty:"medium", question:"A book about whales tells you their size, what they eat, and where they live. What kind of book is this?", options:["A fairy tale","A poem","An informational book","A comic book"], answer:2, explanation:"A book that gives real facts about a topic is called an informational book." }
+      { id:"2x4", subject:"mixed", skill:"Informational Text", difficulty:"medium", question:"A book about whales tells you their size, what they eat, and where they live. What kind of book is this?", options:["A fairy tale","A poem","An informational book","A comic book"], answer:2, explanation:"A book that gives real facts about a topic is called an informational book." },
+
+      /* Reading (3 more) */
+      { id:"2r6", subject:"reading", skill:"Author's Purpose", difficulty:"easy", question:"A short story makes you laugh about a silly dog. Why did the author most likely write it?", options:["To teach you math","To entertain you","To give you directions","To scare you"], answer:1, explanation:"When a story is funny and makes you laugh, the author wrote it to entertain you." },
+      { id:"2r7", subject:"reading", skill:"Synonyms and Antonyms", difficulty:"easy", question:"Which word means the OPPOSITE of 'happy'?", options:["Glad","Joyful","Sad","Cheerful"], answer:2, explanation:"An antonym is a word that means the opposite. 'Sad' is the opposite of 'happy.'" },
+      { id:"2r8", subject:"reading", skill:"Table of Contents", difficulty:"easy", question:"Where would you look to find what page Chapter 3 starts on?", options:["The glossary","The index","The table of contents","The cover"], answer:2, explanation:"The table of contents is at the front of a book and lists each chapter with its page number." },
+
+      /* Math (3 more) */
+      { id:"2m6", subject:"math", skill:"Telling Time", difficulty:"medium", question:"The clock shows the hour hand on 4 and the minute hand on 6. What time is it?", options:["4:06","6:04","4:30","6:30"], answer:2, explanation:"When the minute hand points to 6, it means 30 minutes. The hour hand is on 4, so it is 4:30." },
+      { id:"2m7", subject:"math", skill:"Adding Three Numbers", difficulty:"medium", question:"What is 15 + 22 + 13?", options:["40","45","50","55"], answer:2, explanation:"Add step by step: 15 + 22 = 37, then 37 + 13 = 50." },
+      { id:"2m8", subject:"math", skill:"Even and Odd", difficulty:"easy", question:"Which of these numbers is odd?", options:["24","36","50","47"], answer:3, explanation:"An odd number cannot be split into two equal groups. 47 ends in 7, so it is odd. Numbers ending in 0, 2, 4, 6, or 8 are even." },
+
+      /* Mixed (2 more) */
+      { id:"2x5", subject:"mixed", skill:"Reading a Bar Graph", difficulty:"easy", question:"A bar graph shows: Apples = 8, Oranges = 5, Bananas = 3. Which fruit do the most students like?", options:["Oranges","Bananas","Apples","They are all the same"], answer:2, explanation:"Apples have the tallest bar at 8. That means more students picked apples than any other fruit." },
+      { id:"2x6", subject:"mixed", skill:"Types of Weather", difficulty:"easy", question:"Which word describes weather when water falls from the clouds?", options:["Sunny","Windy","Rainy","Cloudy"], answer:2, explanation:"When water drops fall from clouds, that is called rain. Rainy weather means water is falling from the sky." }
     ],
 
     /* ── GRADE 3 (~32 questions) ── */

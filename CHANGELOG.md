@@ -1,5 +1,32 @@
 # Changelog — STAARTEST
 
+## v5.0.0 — 2026-04-04 (Phase 4: Launch Readiness + iOS Shell + K-2 Completion)
+### Added
+- K-2 PDF power packs: gradeK_power_pack.pdf, grade1_power_pack.pdf, grade2_power_pack.pdf
+- iOS app shell: real SwiftUI project with 14 source files (Profile, Grades, Dashboard, Theme)
+- Deployment model documentation with exact Netlify-GitHub linking steps
+
+### Expanded
+- Kindergarten questions: 12 → 22 (letters, counting, shapes, patterns, directions)
+- Grade 1 questions: 12 → 22 (compound words, even/odd, calendar, predictions)
+- Grade 2 questions: 14 → 22 (author's purpose, synonyms, time, bar graphs)
+- Total platform questions: 198 → 226
+- All K-6 grades now have PDF power packs (7 total)
+
+### Documented
+- Deployment model status with exact operator steps (docs/decisions/DEPLOYMENT_MODEL_STATUS.md)
+- K-2 completion strategy (docs/decisions/K2_COMPLETION_STRATEGY.md)
+- Support seam light refinement (docs/decisions/SUPPORT_SEAM_LIGHT_REFINEMENT.md)
+
+### iOS (H1STAARTESTAPP)
+- Package.swift for Swift Package Manager
+- SwiftUI app entry point with profile-gated navigation
+- Tab navigation: Grades, Progress, Profile
+- Models: StudentProfile, Question, Badge, StudySession
+- Services: ProfileManager (AppStorage), ProgressManager (streak calculation)
+- Views: ProfileSetup, ProfileView, GradeSelection, GradeHQ, ProgressOverview
+- Theme: AppTheme with grade color tokens
+
 ## v4.0.0 — 2026-04-04 (Phase 3: K-6 Platform Foundation)
 ### Added
 - K-6 platform architecture: Kindergarten, Grade 1, and Grade 2 Starter HQ pages

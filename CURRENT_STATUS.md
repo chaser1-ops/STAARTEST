@@ -1,15 +1,15 @@
 # Current Status — STAARTEST
 
-**Last updated**: 2026-04-04 (Phase 3)
+**Last updated**: 2026-04-04 (Phase 4)
 
 ## Website
-- **State**: Production-ready, Phase 3 K-6 platform expansion complete
-- **Version**: v4.0.0
+- **State**: Launch-ready, Phase 4 complete
+- **Version**: v5.0.0
 - **Pages**: index, gradeK, grade1, grade2, grade3, grade4, grade5, grade6, sources, parent-dashboard, power-pack (11 pages)
 - **Architecture**: K-6 platform with "Starter HQ" (K-2) and "Full HQ" (3-6) tiers
 - **Features**: Kid profiles, practice arena (4 modes incl. Boss Battle), weekly missions, badges (6-8/grade), streak tracking, confetti, upgraded parent dashboard, confidence tracking, certificates, Grade 5 Science
-- **Questions**: K (12), G1 (12), G2 (14), G3 (32), G4 (40), G5 (48 incl. Science), G6 (40) — 198 total
-- **PDFs**: Grade 3, 4, 5, 6 power packs
+- **Questions**: K (22), G1 (22), G2 (22), G3 (32), G4 (40), G5 (48 incl. Science), G6 (40) — 226 total
+- **PDFs**: All K-6 grades have power packs (7 total)
 
 ## Repo
 - **Local**: `/Volumes/AI_SSD/STARTESTING`
