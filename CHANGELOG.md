@@ -1,5 +1,27 @@
 # Changelog — STAARTEST
 
+## v3.0.0 — 2026-04-04 (Phase 2: Legendary Product Expansion)
+### Added
+- Kid profile system: nickname, avatar selection (16 options), grade, localStorage persistence
+- Profile bar on all grade pages showing identity and streak
+- Weekly mission rhythm: Mon=Reading, Tue=Math, Wed=Mixed, Thu=Weak Spots, Fri=Boss Battle
+- Boss Battle mode: 10 random questions, 20-second timer, score verdict, Boss Slayer badge
+- Streak system: consecutive study day tracking, current + longest streak, fire visualization
+- Confetti effects on badge unlock, boss battle victory, streak milestones
+- Grade 5 Science: 8 questions + Science tab with cheat sheets (matter, ecosystems, weather, force/motion)
+- Upgraded parent dashboard: subject strength bars, skill health labels, activity table, suggested next action
+
+### Expanded
+- Question banks: Grade 3 (20→32), Grade 4 (10→28), Grade 5 (10→38 incl. Science), Grade 6 (10→28)
+- Total questions: 50 → 126
+- Badges expanded to 8 per grade (including Boss Slayer, Study Streak, Science Explorer)
+
+### Documented
+- School mode / sponsor seam architecture (docs/decisions/SCHOOL_MODE_AND_SPONSOR_SEAM.md)
+- Phase 2 product direction (docs/decisions/PHASE2_PRODUCT_DIRECTION.md)
+- Rise Intellect / RiseIQ future platform alignment notes
+- iOS companion app roadmap updated with web-to-iOS module mapping
+
 ## v2.0.0 — 2026-04-04
 ### Added
 - Complete website redesign merging two reference builds

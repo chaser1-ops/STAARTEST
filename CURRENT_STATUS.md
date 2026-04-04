@@ -1,13 +1,14 @@
 # Current Status — STAARTEST
 
-**Last updated**: 2026-04-04
+**Last updated**: 2026-04-04 (Phase 2)
 
 ## Website
-- **State**: Production-ready, all pages built and functional
+- **State**: Production-ready, Phase 2 product expansion complete
+- **Version**: v3.0.0
 - **Pages**: index, grade3, grade4, grade5, grade6, sources, parent-dashboard, power-pack
 - **Design**: Dark premium aesthetic with grade-specific color tokens
-- **Features**: Practice arena, missions, badges, dashboard, missed-question replay, confidence tracking, certificates
-- **Questions**: Grade 3 (20), Grade 4 (10), Grade 5 (10), Grade 6 (10)
+- **Features**: Kid profiles, practice arena (4 modes incl. Boss Battle), weekly missions, badges (8/grade), streak tracking, confetti, upgraded parent dashboard, confidence tracking, certificates, Grade 5 Science
+- **Questions**: Grade 3 (32), Grade 4 (28), Grade 5 (38 incl. Science), Grade 6 (28) — 126 total
 
 ## Repo
 - **Local**: `/Volumes/AI_SSD/STARTESTING`
