@@ -1,54 +1,53 @@
 # STAAR Power Portal
 
-A premium STAAR prep website for Texas students in Grades 3–6, featuring daily study missions, official-style practice questions, badges, progress tracking, missed-question replay, printable power packs, and parent dashboards.
+A K-6 learning platform for Texas STAAR test preparation. Practice questions, flashcards, daily missions, badges, progress tracking, and printable study tools — all free for families.
 
-## Live Site
+**Live at [staartest.app](https://staartest.app)**
 
-**https://staartest.netlify.app/**
+## Features
+
+- **K-6 Grade Coverage** — Kindergarten through Grade 6 with age-appropriate content
+- **236 Practice Questions** — Reading, Math, Science (Grade 5), and mixed review
+- **Flashcard Lab** — Flip-to-learn cards with grade-aware decks and memory hints
+- **Boss Battle Mode** — Timed challenge mode for test-day confidence
+- **Daily Missions** — Day-of-week study rhythm (Reading / Math / Mixed / Review / Boss Battle)
+- **Victory Wall** — Collectible achievement banners earned at real milestones
+- **Kid Profiles** — Nickname, avatar, grade selection (no account required)
+- **Streak Tracking** — 7-day study calendar with fire visualization
+- **Parent Dashboard** — Subject strength bars, skill health, suggested next steps
+- **7 PDF Power Packs** — Printable cheat sheets, memory tricks, and certificates
+- **Test Week Mode** — Countdown + "Tonight's Best Move" recommendations
+- **Responsive** — Phone, tablet, and desktop with touch-friendly targets
+
+## Tech Stack
+
+- Static HTML/CSS/JS — no build tools, no dependencies
+- localStorage for progress tracking — no backend, no accounts
+- Netlify hosting with GitHub continuous deployment
 
 ## Project Structure
 
 ```
-STARTESTING/
-├── site/                    # Canonical website (Netlify publish directory)
-│   ├── index.html           # Landing page with grade selection
-│   ├── grade3.html          # Grade 3 HQ (full study lab)
-│   ├── grade4.html          # Grade 4 HQ
-│   ├── grade5.html          # Grade 5 HQ
-│   ├── grade6.html          # Grade 6 HQ
-│   ├── sources.html         # Official source attributions
-│   ├── parent-dashboard.html # Parent-facing progress overview
-│   ├── power-pack.html      # Printable tools and cheat sheets
-│   ├── css/style.css        # Design system
-│   ├── js/app.js            # App engine (practice, missions, badges, etc.)
-│   └── assets/              # Images, icons, PDFs
-├── docs/                    # Session logs, decisions, closeouts
-├── reference/               # Reference materials
-├── archive/                 # Archived builds
-├── netlify.toml             # Netlify deployment config
-├── CLAUDE.md                # AI execution constitution
-├── PROJECT_CHARTER.md       # Project charter
-├── PRODUCT_ROADMAP.md       # Roadmap
-├── CHANGELOG.md             # Version history
-├── CURRENT_STATUS.md        # Current project state
-└── NEXT_SESSION_BOOT.md     # Next session startup guide
+site/                  → Published website (Netlify publish directory)
+  ├── index.html       → Landing page with K-6 grade selection
+  ├── gradeK-6.html    → Grade-specific study labs
+  ├── css/style.css    → Design system
+  ├── js/app.js        → Application engine
+  └── assets/pdfs/     → Printable power packs
+docs/                  → Product decisions and architecture docs
+netlify.toml           → Deployment configuration
 ```
-
-## Tech Stack
-
-- **Static HTML/CSS/JS** — no build tools, no dependencies
-- **localStorage** — client-side progress tracking
-- **Netlify** — static hosting with GitHub-backed continuous deployment
 
 ## Deploy
 
-### Netlify (GitHub-backed)
-1. Push to `https://github.com/chaser1-ops/STAARTEST`
-2. Netlify auto-deploys from `site/` directory via `netlify.toml`
+Netlify auto-deploys from `main` branch. Publish directory: `site/`.
 
-### Manual Fallback
-1. Drag the `site/` folder contents into Netlify deploy
+Manual fallback: drag `site/` folder into Netlify deploy panel.
 
-## Credit
+## Brand
 
-Brought to you by [www.risestudiolabs.com](https://www.risestudiolabs.com)
+- **Company**: [RISE Studio Labs](https://risestudiolabs.com)
+- **Platform**: [Rise Intellect](https://riseintellect.com)
+- **iOS App**: [RiseIQ](https://riseiq.app)
+
+*Inspired by Sebastian & Matilda — for our kids*

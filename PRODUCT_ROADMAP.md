@@ -1,48 +1,33 @@
-# Product Roadmap — STAARTEST
+# Product Roadmap
 
-## Phase 1: Foundation (Current)
-- [x] Merged website from two reference builds
-- [x] Landing page with grade selection HQ
-- [x] Grade 3 HQ — fully fleshed out (20+ questions, cheat sheets, missions, badges)
-- [x] Grade 4 HQ — real content (10+ questions, grade-specific cheat sheets)
-- [x] Grade 5 HQ — real content (10+ questions, grade-specific cheat sheets)
-- [x] Grade 6 HQ — real content (10+ questions, grade-specific cheat sheets)
-- [x] Sources page with official attributions
-- [x] Parent dashboard page
-- [x] Power pack / printables page
-- [x] Design system with dark premium aesthetic
-- [x] localStorage progress tracking per grade
-- [x] Badge system per grade
-- [x] Mission system
-- [x] Practice arena with 3 modes (Practice, Focus, Challenge)
-- [x] Missed-question replay
-- [x] Confidence check-ins
-- [x] Victory certificates
-- [x] Git repo initialized and pushed to GitHub
-- [x] Netlify deployment config
+## Shipped
+- [x] K-6 web platform with 236 questions
+- [x] Flashcard Lab with 15 grade-aware decks
+- [x] Boss Battle mode
+- [x] Daily missions with weekly rhythm
+- [x] Victory Wall with collectible achievement banners
+- [x] Kid profiles (no account required)
+- [x] Parent dashboard with smart suggestions
+- [x] 7 PDF power packs (K through 6)
+- [x] Test Week Mode with countdown and recommendations
+- [x] Grade 5 Science
+- [x] Mobile/tablet responsive design
+- [x] RiseIQ iOS app (simulator-verified)
+- [x] staartest.app custom domain
+- [x] GitHub-backed continuous deployment
 
-## Phase 2: Content Expansion
-- [ ] Expand Grade 3 question bank to 40+ questions
-- [ ] Expand Grade 4–6 question banks to 30+ questions each
-- [ ] Add Science for Grade 5 (STAAR Science starts at Grade 5)
-- [ ] Add Social Studies content for Grade 8 readiness
-- [ ] Add more printable worksheets and activity pages
+## Next
+- [ ] RiseIQ on TestFlight
+- [ ] App icon design
+- [ ] Expand flashcard decks (vocabulary, more strategies)
+- [ ] Expand question banks toward 50+ per grade
+- [ ] Rise Intellect landing page
+- [ ] Real device testing and family feedback
 
-## Phase 3: Feature Upgrades
-- [ ] Theme variables/tokens for easy customization
-- [ ] Confetti/success animations
-- [ ] Lightweight page transition effects
-- [ ] Shared progress view across grades
-- [ ] Study streak calendar visualization
-
-## Phase 4: iOS Companion App
-- [ ] SwiftUI app structure
-- [ ] Shared conceptual question/content modules
-- [ ] TestFlight beta
+## Future
+- [ ] Optional accounts for cross-device sync
+- [ ] Weak-spot auto-generated flashcards
 - [ ] App Store submission
-
-## Phase 5: Growth
-- [ ] Additional Texas districts beyond Garland
-- [ ] Grade 7–8 support
-- [ ] Teacher/classroom mode
-- [ ] Leaderboards (opt-in)
+- [ ] Grade 7-8 expansion
+- [ ] School/teacher dashboard
+- [ ] Custom flashcard deck creation
