@@ -1114,10 +1114,10 @@
     skillEntries.sort(function (a, b) { return a.count - b.count; });
 
     var weakSkills = skillEntries.slice(0, 5).map(function (e) {
-      var label = "needs work";
+      var label = "incomplete";
       if (e.count >= 3) label = "strong";
       else if (e.count >= 2) label = "improving";
-      var color = label === "strong" ? "#22c55e" : label === "improving" ? "#f59e0b" : "#ef4444";
+      var color = label === "strong" ? "#22c55e" : label === "improving" ? "#f59e0b" : "#f59e0b";
       return '<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);">' +
         '<span>' + escapeHtml(e.name) + '</span>' +
         '<span class="pill" style="background:' + color + ';color:#fff;font-size:0.75rem;padding:2px 8px;">' + label + '</span></div>';
@@ -1452,18 +1452,24 @@
     if (hasScience) subjectFilters.push("science");
     subjectFilters.push("missed");
 
+    var maxQuestions = (CURRENT_GRADE === "K" || CURRENT_GRADE === "1" || CURRENT_GRADE === "2") ? 5 : 10;
+
     function filtered() {
-      if (filter === "all") return bank;
-      if (filter === "missed") {
+      var result;
+      if (filter === "all") {
+        result = bank;
+      } else if (filter === "missed") {
         var idSet = {};
         var mi;
         for (mi = 0; mi < (state.missedQuestions || []).length; mi++) {
           idSet[state.missedQuestions[mi]] = true;
         }
         var ids = Object.keys(idSet);
-        return bank.filter(function (q) { return ids.indexOf(q.id) !== -1; });
+        result = bank.filter(function (q) { return ids.indexOf(q.id) !== -1; });
+      } else {
+        result = bank.filter(function (q) { return q.subject === filter; });
       }
-      return bank.filter(function (q) { return q.subject === filter; });
+      return result.slice(0, maxQuestions);
     }
 
     function score(list) {

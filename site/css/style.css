@@ -397,10 +397,10 @@ h4 { font-size: 1.05rem; margin: 0 0 10px }
 .print-sheet {
   background: #fff; color: #13213a; border-radius: 26px; padding: 26px; box-shadow: var(--shadow);
 }
-.print-sheet h3 { font-size: 1.6rem; margin: 0 0 8px; color: #13213a }
+.print-sheet h3 { font-size: 1.8rem; margin: 0 0 8px; color: #13213a; letter-spacing: -0.02em }
 .print-sheet p, .print-sheet li { color: #35445f }
 .print-box {
-  border: 2px dashed #b8c7e6; border-radius: 18px; padding: 16px; margin-top: 12px; color: #13213a;
+  border: 2px dashed #b8c7e6; border-left: 4px solid; border-left-color: inherit; border-radius: 18px; padding: 16px; margin-top: 12px; color: #13213a;
 }
 
 /* ── Footer ── */
@@ -587,12 +587,14 @@ h4 { font-size: 1.05rem; margin: 0 0 10px }
 .flashcard-container { perspective: 1000px; cursor: pointer; margin: 0 auto; max-width: 560px }
 .flashcard { position: relative; width: 100%; min-height: 260px; transition: transform 0.5s; transform-style: preserve-3d }
 .flashcard.flipped { transform: rotateY(180deg) }
-.flashcard-face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); box-shadow: var(--shadow) }
+.flashcard-container:active .flashcard { transform: scale(0.98) }
+.flashcard-container:active .flashcard.flipped { transform: rotateY(180deg) scale(0.98) }
+.flashcard-face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)), linear-gradient(180deg, rgba(154,124,255,.06), rgba(94,230,255,.03)); box-shadow: var(--shadow) }
 .flashcard-back { transform: rotateY(180deg) }
-.flashcard-prompt { font-size: 1.3rem; font-weight: 800; line-height: 1.4 }
-.flashcard-answer { font-size: 1.2rem; font-weight: 700; color: var(--cyan) }
+.flashcard-prompt { font-size: 1.4rem; font-weight: 800; line-height: 1.4; letter-spacing: -0.01em }
+.flashcard-answer { font-size: 1.3rem; font-weight: 800; color: var(--cyan) }
 .flashcard-hint { font-size: .9rem; color: var(--gold); margin-top: 12px; font-style: italic }
-.flashcard-category { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: 12px }
+.flashcard-category { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-top: 12px; background: rgba(255,255,255,.06); padding: 4px 10px; border-radius: 999px; display: inline-block }
 .flashcard-nav { display: flex; gap: 10px; justify-content: center; margin-top: 16px }
 .flashcard-confidence { display: flex; gap: 10px; justify-content: center; margin-top: 12px }
 .flashcard-deck-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px }
