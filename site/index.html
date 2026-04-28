@@ -10,11 +10,18 @@
   <meta property="og:description" content="Free practice questions, flashcards, and study tools for Texas STAAR prep. K-6. No account needed.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://staartest.app/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://staartest.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="STAAR Power Portal — Free K-6 Study Platform">
   <meta name="twitter:description" content="Free practice questions, flashcards, and study tools for Texas STAAR prep.">
-  <link rel="manifest" href="manifest.json">
+  <meta name="twitter:image" content="https://staartest.app/og-image.png">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#09111f">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -101,7 +108,7 @@
           <div class="grade-num" style="background:linear-gradient(135deg,#ff9ec4,#ffd166);-webkit-background-clip:text;background-clip:text">K</div>
           <h3>Kindergarten</h3>
           <p class="small muted">22 questions</p>
-          <a class="btn primary" href="gradeK.html">Enter Kindergarten HQ</a>
+          <a class="btn primary" href="gradek.html">Enter Kindergarten HQ</a>
         </div>
         <div class="grade-card" data-grade="1">
           <div class="grade-num" style="background:linear-gradient(135deg,#5ee6ff,#9a7cff);-webkit-background-clip:text;background-clip:text">1</div>
@@ -152,7 +159,7 @@
     <div class="container">
       <div class="grid-2">
         <div class="panel">
-          <h3>Texas STAAR Reading: April 7–10</h3>
+          <h3 data-staar-headline="reading">Texas STAAR Reading: April 6-9, 2027</h3>
           <div class="countdown-grid" data-countdown="reading">
             <div class="countdown-box"><div class="num d">0</div><div class="small muted">Days</div></div>
             <div class="countdown-box"><div class="num h">0</div><div class="small muted">Hours</div></div>
@@ -161,7 +168,7 @@
           </div>
         </div>
         <div class="panel">
-          <h3>Texas STAAR Math: April 21–24</h3>
+          <h3 data-staar-headline="math">Texas STAAR Math: April 20-23, 2027</h3>
           <div class="countdown-grid" data-countdown="math">
             <div class="countdown-box"><div class="num d">0</div><div class="small muted">Days</div></div>
             <div class="countdown-box"><div class="num h">0</div><div class="small muted">Hours</div></div>
@@ -209,5 +216,6 @@
   </footer>
 
   <script src="js/app.js"></script>
+  <script src="/js/sw-register.js"></script>
 </body>
 </html>

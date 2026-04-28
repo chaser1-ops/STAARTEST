@@ -715,3 +715,15 @@ ul.pretty li strong { color: var(--text) }
   background: rgba(255,209,102,.12); border: 1px solid rgba(255,209,102,.20);
   color: var(--gold); font-weight: 800; font-size: .78rem;
 }
+
+/* Post-test-window countdown state */
+.countdown-post {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 1.1rem;
+  color: var(--text-2, #B8C5D6);
+  background: rgba(94, 230, 255, 0.05);
+  border: 1px solid rgba(94, 230, 255, 0.15);
+  border-radius: 12px;
+  font-weight: 500;
+}
