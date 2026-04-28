@@ -279,7 +279,7 @@ h4 { font-size: 1.05rem; margin: 0 0 10px }
 .subject-panel { display: none }
 .subject-panel.active { display: block }
 .cheat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px }
-.cheat h4 { color: var(--gold) }
+.cheat h3 { color: var(--gold); font-size: 1.1rem; margin: 0 0 8px }
 .callout {
   padding: 14px 16px; border-left: 4px solid var(--gold);
   background: rgba(255,209,102,.08); border-radius: 16px;
