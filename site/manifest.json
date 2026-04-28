@@ -3,8 +3,25 @@
   "short_name": "STAAR Portal",
   "description": "Free K-6 STAAR prep with practice questions, flashcards, and study tools",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#09111f",
   "theme_color": "#09111f",
-  "icons": []
+  "lang": "en-US",
+  "categories": ["education", "kids"],
+  "icons": [
+    {"src": "/assets/icons/icon-72.png",  "sizes": "72x72",   "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icons/icon-96.png",  "sizes": "96x96",   "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icons/icon-128.png", "sizes": "128x128", "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icons/icon-144.png", "sizes": "144x144", "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icons/icon-152.png", "sizes": "152x152", "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/assets/icons/icon-384.png", "sizes": "384x384", "type": "image/png", "purpose": "any"},
+    {"src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ],
+  "shortcuts": [
+    {"name": "3rd Grade HQ", "short_name": "Grade 3", "url": "/grade3", "icons": [{"src": "/assets/icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Print Power Packs", "short_name": "Print PDFs", "url": "/power-pack", "icons": [{"src": "/assets/icons/icon-192.png", "sizes": "192x192"}]}
+  ]
 }
