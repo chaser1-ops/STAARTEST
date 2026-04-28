@@ -3,6 +3,48 @@
 All notable changes to STAAR Power Portal documented here.
 Follows [Keep a Changelog](https://keepachangelog.com/) format.
 
+## [Phase 18 — Wave 1 Power Pack PDFs] — 2026-04-28
+
+**PR:** [#4](https://github.com/chaser1-ops/STAARTEST/pull/4) (merge commit `03fac7e`)
+**Production verification:** 7/7 PDFs serve 200, /power-pack shows 7 grade cards, Lighthouse mobile a11y on /power-pack = **100**
+
+### Added
+- **6 new branded PDFs** generated from Wave 1 Markdown source (`content-drafts/wave-1/`):
+  - `garland_staar_kindergarten_power_pack.pdf` (262 KB, 26 pages)
+  - `garland_staar_grade1_power_pack.pdf` (65 KB, 25 pages)
+  - `garland_staar_grade2_power_pack.pdf` (69 KB, 25 pages)
+  - `garland_staar_grade4_power_pack.pdf` (74 KB, 25 pages)
+  - `garland_staar_grade5_power_pack.pdf` (92 KB, 33 pages — includes Science)
+  - `garland_staar_grade6_power_pack.pdf` (79 KB, 27 pages)
+  (Grade 3 untouched at 22 KB.)
+- **`scripts/build_power_pack_pdfs.py`** — WeasyPrint-based Markdown → PDF converter, brand-consistent typography (cyan #5ee6ff / purple #9a7cff / pink #ff5fa2 gradient header, US Letter 0.6" margins, Inter font stack, footer on every page with page counter).
+- **K visual rendering** — bracketed placeholders rendered as inline SVG:
+  - 5 stars in a row (`<polygon>` star primitives, gold fill)
+  - 8 apples (red circles with green stems)
+  - Cookie group comparison (brown circles, labeled rows)
+  - Ball group 3-way comparison (blue circles)
+  - Shape primitives row (cyan circle, purple square, gold triangle, pink rectangle, each labeled)
+  - Position diagram (`🐕 [next to] 📦` emoji approach for WeasyPrint compatibility)
+- **/power-pack page** updated:
+  - Canonical hrefs for all 7 grades pointing to `garland_staar_{grade}_power_pack.pdf`
+  - Subtitles: "Pre-STAAR Foundations" (K/1/2), "TEKS-aligned STAAR Prep" (3/4/6), "TEKS-aligned + Science" (5)
+  - Layout preserved: 4-column top row + 3-column bottom row, existing button color variants kept
+
+### Notes
+- Grade 3 PDF stays untouched (legacy artisan layout from earlier phase).
+- Old stub PDFs (`gradek_power_pack.pdf` etc., 6-9 KB each) remain on disk but unreferenced; cleanup deferred.
+- Public PSI API quota exhausted; verification used local `lighthouse@12` CLI against production URLs.
+- Bracketed visual regex covers `[Visual: ...]` and `[Visual choices: ...]` patterns; unmatched patterns fall back to italic text.
+
+### Deferred to Phase 19 polish
+- Grade 6 box plot diagram (data display visualization)
+- PDF cover thumbnails for /power-pack page card previews
+- Spanish translations of Wave 1 packs
+- Cleanup of old stub PDFs
+- Cover page SVG illustration enhancement
+
+---
+
 ## [Phase 16 + T12] — 2026-04-28
 
 **Phase 16 PR:** [#2](https://github.com/chaser1-ops/STAARTEST/pull/2) (merge commit `1873c73`, 8 atomic commits)
