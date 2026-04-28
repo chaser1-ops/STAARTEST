@@ -1,59 +1,71 @@
 # Current Status
 
-**Last updated:** 2026-04-28 (Phase 16 + T12 closeout)
+**Last updated:** 2026-04-28 (Phase 18 closeout)
 **Production URL:** https://staartest.app
 **Repo:** https://github.com/chaser1-ops/STAARTEST
-**Latest deploy:** merge commit `227e5ca` (PR #3, GSC verification)
+**Latest deploy:** merge commit `03fac7e` (PR #4, Phase 18 Wave 1 PDFs)
 
 ## State
 
 **Production health:** ✅ All systems green
-- **Lighthouse mobile a11y: 100 across all 5 audited pages** (was 88 pre-Phase-16)
+- All 6 Wave 1 power pack PDFs shipped, serving 200 (K, 1, 2, 4, 5, 6) — Grade 3 legacy PDF untouched
+- /power-pack page shows 7 grade cards with subtitles (Pre-STAAR Foundations / TEKS-aligned STAAR Prep / TEKS-aligned + Science)
+- Lighthouse mobile a11y on /power-pack: **100** (no Phase 16 regressions)
+- Lighthouse mobile a11y on / and grade pages: 100 across the board
 - Lighthouse mobile (other categories): Performance 98 / Best Practices 100 / SEO 92
 - Service worker active, scope `/`
 - PWA installable on iOS and Android
 - Social card preview rendering correctly (1200×630 og-image)
-- All 13 pages have full SEO meta + canonical + manifest + theme-color
-- Rich Results schema on all relevant pages: EducationalOrganization, Course (TEKS-aligned per grade), BreadcrumbList
+- All 13 sub-pages have full SEO meta + canonical + manifest + theme-color
+- Rich Results schema: EducationalOrganization, Course (TEKS-aligned per grade), BreadcrumbList
 - Countdown auto-rolling to 2027 with post-test transitional state
 - Security headers hardened (CSP + HSTS preload)
-- GSC verified, sitemap submitted, 8 URLs queued for indexing
+- GSC verified, sitemap submitted, 8 URLs in priority crawl queue
+- Bing Webmaster Tools imported via GSC SSO, sitemap auto-imported (Status: Success, 13 URLs)
 
 **Active branches:**
-- `main` (production) — at `227e5ca`
-- `fix/audit-2026-04-28` — preserved on remote (Phase 1 audit fixes, rollback reference)
-- `feat/phase-16-2026-04-28` — preserved on remote (Phase 16 a11y + schema)
-- `ops/gsc-verification-2026-04-28` — preserved on remote (GSC verification token)
+- `main` (production) — at `03fac7e`
+- `fix/audit-2026-04-28` — preserved on remote (rollback ref)
+- `feat/phase-16-2026-04-28` — preserved on remote (rollback ref)
+- `ops/gsc-verification-2026-04-28` — preserved on remote (rollback ref)
+- `feat/wave-1-pdf-conversion-2026-04-28` — preserved on remote (rollback ref)
 
-## Phase 16 + T12 — DONE
-- Accessibility: 100 / 100 / 100 / 100 / 100 across `/`, `/gradek`, `/grade3`, `/power-pack`, `/sources`
-- Rich Results: validated by Google Rich Results Test
-- GSC: property verified, sitemap submitted (13 pages discovered, Status: Success)
-- 8 URLs in GSC priority crawl queue: `/`, `/grade3`, `/grade4`, `/grade5`, `/grade6`, `/gradek`, `/power-pack`, `/parent-dashboard`
-- Estimated Google indexing: 1-7 days for first crawl post-submission
+## Wave 1 — DONE (6/6 PDFs shipped)
+
+| Pack | PDF | Pages | Source |
+|---|---|---|---|
+| Kindergarten | `garland_staar_kindergarten_power_pack.pdf` | 26 | content-drafts/wave-1/gradek_power_pack_content.md |
+| Grade 1 | `garland_staar_grade1_power_pack.pdf` | 25 | content-drafts/wave-1/grade1_power_pack_content.md |
+| Grade 2 | `garland_staar_grade2_power_pack.pdf` | 25 | content-drafts/wave-1/grade2_power_pack_content.md (Q8 patched) |
+| Grade 3 | `garland_staar_grade3_power_pack.pdf` | 7 | (legacy artisan PDF — untouched) |
+| Grade 4 | `garland_staar_grade4_power_pack.pdf` | 25 | content-drafts/wave-1/grade4_power_pack_content.md |
+| Grade 5 | `garland_staar_grade5_power_pack.pdf` | 33 | content-drafts/wave-1/grade5_power_pack_content.md (includes Science) |
+| Grade 6 | `garland_staar_grade6_power_pack.pdf` | 27 | content-drafts/wave-1/grade6_power_pack_content.md |
 
 ## Backlog
 
-### Pending operator actions
-- **Bing Webmaster import** (~2 min, manual) — Bing → Google SSO with `chase.neel@gmail.com` → "Import your sites from Google Search Console" → select `staartest.app` → Sitemaps → submit `https://staartest.app/sitemap.xml`. Bing accepts GSC verification, no separate token needed.
+### Phase 19 polish (small follow-up items, low priority)
+1. **Grade 6 box plot diagram** — data display visualization for the math statistics section.
+2. **PDF cover thumbnails** for /power-pack page card previews (currently book-emoji 📚).
+3. **Cleanup of old stub PDFs** — `gradek_power_pack.pdf`, `grade1_power_pack.pdf`, etc. (6-9 KB each, now unreferenced; safe to delete).
+4. **Cover page SVG illustration** — current covers have gradient bar + typography; could add brand mark.
+5. **Spanish translations** of Wave 1 packs (separate workstream — high-value for Texas).
 
 ### Active workstreams (other tracks)
-- **Wave 1 content sprint** (ChatGPT supervising): Grades 4 and 5 approved; Grade 6 in revision; Grades 2, 1, K queued. Content drafts arriving via `~/Downloads` → file into `content-drafts/wave-1/` as they land.
-- **Domain portfolio decision** pending — see `audit/STAAR_Domain_Recon_2026-04-28.pdf` for the brief.
+- **Wave 2 content sprint** (queued — ChatGPT supervising) — study habits + parent guides; feeds into `/learn` section.
+- **Phase 17** — `/learn` section build, gated on Wave 1 + Wave 2 PDFs landing in production. Wave 1 ✅, Wave 2 ⏳.
+- **Domain portfolio decision** still pending — see `audit/STAAR_Domain_Recon_2026-04-28.pdf`.
 
-### Web platform (queued, not active)
-1. **Phase 17 — `/learn` section build** — unlocks after Wave 1 + Wave 2 content lands.
-2. **Power pack content parity** — Grade 3 PDF is 22KB (real); other grades are 6-9KB stubs. Folds into Wave content sprints.
-3. **`.html → 301` enforcement** (low priority) — bypassed by Pretty URLs; canonical tags handle SEO.
-4. **Indexing follow-up** in 7 days: confirm GSC reports `/` and grade pages as `Indexed` (not just `Crawled`).
+### Indexing follow-up (in ~7 days, light check)
+- Confirm GSC Pages report shows the 8 priority URLs as `Indexed` (not stuck at `Crawled — currently not indexed`).
 
 ## Documentation freshness
 
 - `CLAUDE.md` ✅ updated 2026-04-28 (audit closeout)
-- `CHANGELOG.md` ✅ updated 2026-04-28 (Phase 16 + T12 prepended)
+- `CHANGELOG.md` ✅ updated 2026-04-28 (Phase 18 prepended)
 - `CURRENT_STATUS.md` ✅ this file
 - `NEXT_SESSION_BOOT.md` ✅ updated 2026-04-28
-- `PRODUCT_ROADMAP.md` — review when Phase 17 is queued
+- `PRODUCT_ROADMAP.md` — review when Phase 17 / Wave 2 begins
 
 ## Companion Projects
 
