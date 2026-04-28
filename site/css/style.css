@@ -11,7 +11,7 @@
   --panel-glass: rgba(255,255,255,.05);
   --text: #eef4ff;
   --ink: #eef4ff;
-  --muted: #8fa3c8;
+  --muted: #b3c0d8;
   --line: rgba(255,255,255,.10);
   --shadow: 0 18px 50px rgba(0,0,0,.35);
   --radius: 24px;
@@ -714,6 +714,33 @@ ul.pretty li strong { color: var(--text) }
   display: inline-flex; padding: 6px 12px; border-radius: 999px;
   background: rgba(255,209,102,.12); border: 1px solid rgba(255,209,102,.20);
   color: var(--gold); font-weight: 800; font-size: .78rem;
+}
+
+/* A11y: links inside body text need a non-color cue (underline) to satisfy
+   WCAG 1.4.1 / Lighthouse link-in-text-block. Scoped to body content; nav,
+   footer, and button-styled .btn links are excluded so existing chrome is
+   unchanged. */
+p a:not(.btn),
+.lead a:not(.btn),
+.panel p a:not(.btn),
+.panel li a:not(.btn),
+.small a:not(.btn),
+ul.pretty a:not(.btn),
+.source-list a:not(.btn),
+main a:not(.btn):not(.brand):not([class*="card"]) {
+  text-decoration: underline;
+  text-decoration-color: rgba(94, 230, 255, 0.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+p a:not(.btn):hover,
+.lead a:not(.btn):hover,
+.panel p a:not(.btn):hover,
+.panel li a:not(.btn):hover,
+.small a:not(.btn):hover,
+ul.pretty a:not(.btn):hover,
+main a:not(.btn):not(.brand):not([class*="card"]):hover {
+  text-decoration-color: var(--cyan);
 }
 
 /* Post-test-window countdown state */
