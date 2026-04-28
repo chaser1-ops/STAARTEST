@@ -716,6 +716,15 @@ ul.pretty li strong { color: var(--text) }
   color: var(--gold); font-weight: 800; font-size: .78rem;
 }
 
+/* A11y: profile setup modal is dynamically injected with a white card on a
+   dark overlay. h2/label/input inside have no explicit color, so they inherit
+   --text (light) which fails contrast on white card. Force dark text colors
+   inside the modal. */
+#profileOverlay h2 { color: #1f2937; }
+#profileOverlay label { color: #374151; }
+#profileOverlay input { color: #111827; }
+#profileOverlay p { color: #4b5563; }
+
 /* A11y: links inside body text need a non-color cue (underline) to satisfy
    WCAG 1.4.1 / Lighthouse link-in-text-block. Scoped to body content; nav,
    footer, and button-styled .btn links are excluded so existing chrome is
