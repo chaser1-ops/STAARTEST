@@ -2108,7 +2108,7 @@
 
     /* Confidence buttons */
     html += '<div class="flashcard-confidence">';
-    html += '<button class="btn fc-know" style="background:#14b8a6;color:#fff;font-weight:800">Know It</button>';
+    html += '<button class="btn fc-know" style="background:#115e59;color:#fff;font-weight:800">Know It</button>';
     html += '<button class="btn fc-study" style="background:#f59e0b;color:#111;font-weight:800">Study More</button>';
     html += '</div>';
 
