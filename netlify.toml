@@ -1,2 +1,14 @@
 [build]
   publish = "site"
+
+# === HTML processing notes ===
+# Pretty URLs is enabled by default. It:
+#   - Strips .html from <a href> attributes in served HTML (cosmetic href rewriting)
+#   - Serves /grade3 and /grade3.html both with status 200 (no auto-301)
+#   - Lowercases URL paths during rewriting (gradeK.html → /gradek)
+#
+# Our site/_redirects file complements this with explicit 301s from .html → clean URL
+# to provide canonical SEO signaling for Google + external bookmarks.
+# _redirects rules fire BEFORE Pretty URLs, so there is no double-redirect risk.
+#
+# DO NOT disable Pretty URLs without first rewriting all internal hrefs in source HTML.

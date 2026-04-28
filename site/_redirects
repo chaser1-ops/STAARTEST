@@ -1,1 +1,28 @@
-/* /404.html 404
+# Netlify _redirects — STAAR Power Portal
+# Updated 2026-04-28 — fix/audit-2026-04-28 branch
+#
+# Redirect rules fire BEFORE Pretty URLs / Asset Optimization on Netlify's pipeline.
+# Pretty URLs alone serves /grade3 and /grade3.html with 200 (no auto-301 between them).
+# These 301s provide canonical SEO signal so Google consolidates link equity to clean URLs.
+
+# === Grade 3 PDF naming consistency alias ===
+/assets/pdfs/grade3_power_pack.pdf  /assets/pdfs/garland_staar_grade3_power_pack.pdf  200
+
+# === Enforce clean URLs (drop .html extension) — canonical SEO signal ===
+/index.html              /                     301
+/gradek.html             /gradek               301
+/gradeK.html             /gradek               301
+/grade1.html             /grade1               301
+/grade2.html             /grade2               301
+/grade3.html             /grade3               301
+/grade4.html             /grade4               301
+/grade5.html             /grade5               301
+/grade6.html             /grade6               301
+/power-pack.html         /power-pack           301
+/parent-dashboard.html   /parent-dashboard     301
+/sources.html            /sources              301
+/terms.html              /terms                301
+/privacy.html            /privacy              301
+
+# === 404 fallback (must remain LAST) ===
+/*  /404.html  404
