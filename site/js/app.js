@@ -13,6 +13,40 @@
   var CURRENT_GRADE = document.body.dataset.grade || null;
   var AVATAR_OPTIONS = ["\ud83e\udd8a","\ud83d\udc31","\ud83e\udd81","\ud83d\udc3c","\ud83e\udd84","\ud83d\udc32","\ud83e\udd85","\ud83d\udc2c","\ud83d\udc22","\ud83e\udd8b","\ud83c\udf1f","\ud83d\ude80","\u26a1","\ud83c\udfaf","\ud83e\udde0","\ud83d\udd25"];
 
+  // \u2500\u2500\u2500 STAAR Test Window Dates (single source of truth) \u2500\u2500\u2500
+  // Annual STAAR windows historically fall on the 2nd-3rd full week of April.
+  // Auto-rolls to next year once the math window's last day has passed.
+  // 2027/2028 dates are estimates; update when TEA publishes official calendars.
+  var STAAR_DATES = (function () {
+    var YEARS = {
+      2026: { reading: '2026-04-07', math: '2026-04-21', readingEnd: '2026-04-10', mathEnd: '2026-04-24' },
+      2027: { reading: '2027-04-06', math: '2027-04-20', readingEnd: '2027-04-09', mathEnd: '2027-04-23' },
+      2028: { reading: '2028-04-04', math: '2028-04-18', readingEnd: '2028-04-07', mathEnd: '2028-04-21' }
+    };
+    var now = new Date();
+    var year = now.getFullYear();
+    if (YEARS[year] && now > new Date(YEARS[year].mathEnd + 'T23:59:59')) {
+      year = year + 1;
+    }
+    var picked = YEARS[year] || YEARS[2027];
+    return {
+      year: year,
+      reading: new Date(picked.reading + 'T08:00:00'),
+      math: new Date(picked.math + 'T08:00:00'),
+      readingEnd: new Date(picked.readingEnd + 'T23:59:59'),
+      mathEnd: new Date(picked.mathEnd + 'T23:59:59'),
+      readingLabel: 'April ' + parseInt(picked.reading.split('-')[2]) + '-' + parseInt(picked.readingEnd.split('-')[2]) + ', ' + year,
+      mathLabel: 'April ' + parseInt(picked.math.split('-')[2]) + '-' + parseInt(picked.mathEnd.split('-')[2]) + ', ' + year,
+      isPostTestWindow: function () {
+        var n = new Date();
+        var lastYear = n.getFullYear();
+        var prevMathEnd = YEARS[lastYear] && new Date(YEARS[lastYear].mathEnd + 'T23:59:59');
+        var aug31 = new Date(lastYear + '-08-31T23:59:59');
+        return prevMathEnd && n > prevMathEnd && n < aug31;
+      }
+    };
+  })();
+
   /* ================================================================
      SECTION 1: QUESTION BANKS BY GRADE
      ================================================================ */
@@ -605,8 +639,8 @@
 
   function buildTestWeekPanel(state) {
     var now = new Date();
-    var readingDate = new Date("2026-04-07T08:00:00");
-    var mathDate = new Date("2026-04-21T08:00:00");
+    var readingDate = STAAR_DATES.reading;
+    var mathDate = STAAR_DATES.math;
     var daysToReading = Math.max(0, Math.ceil((readingDate - now) / 86400000));
     var daysToMath = Math.max(0, Math.ceil((mathDate - now) / 86400000));
 
@@ -891,10 +925,19 @@
     var boxes = document.querySelectorAll("[data-countdown]");
     if (!boxes.length) return;
     var targets = {
-      reading: new Date("2026-04-07T08:00:00"),
-      math: new Date("2026-04-21T08:00:00")
+      reading: STAAR_DATES.reading,
+      math: STAAR_DATES.math
     };
+    // Update countdown headlines to reflect resolved STAAR_DATES year
+    var readingHeadline = document.querySelector('[data-staar-headline="reading"]');
+    var mathHeadline = document.querySelector('[data-staar-headline="math"]');
+    if (readingHeadline) readingHeadline.textContent = 'Texas STAAR Reading: ' + STAAR_DATES.readingLabel;
+    if (mathHeadline) mathHeadline.textContent = 'Texas STAAR Math: ' + STAAR_DATES.mathLabel;
     function render(type, el) {
+      if (STAAR_DATES.isPostTestWindow()) {
+        el.innerHTML = '<div class="countdown-post">Results coming soon — keep practicing for next year</div>';
+        return;
+      }
       var diff = Math.max(0, targets[type] - new Date());
       var dEl = el.querySelector(".d");
       var hEl = el.querySelector(".h");
